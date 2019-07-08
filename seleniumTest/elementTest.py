@@ -1,6 +1,8 @@
 #<input type="text" class="s_ipt" name="wd" id="kw" maxlength="100" autocomplete="off">
 #<a class="mnav" target="_blank" href="http://www.hao123.com">hao123</a>
+'''
 
+'''
 from seleniumTest.webdriverTest import openbrowser
 import time
 class findelement():
