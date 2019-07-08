@@ -26,8 +26,10 @@ class findelement():
 
 if __name__=='__main__':
     bro = findelement().b
-    id = findelement().findId('kw')
-    id.send_keys('NBA')
+    #id = findelement().findId('kw')
+    #id.send_keys('NBA')
+    id = findelement().findXpah("//*[@id='kw']").send_keys('apple')
     time.sleep(2)
     bro.close()
+
 
