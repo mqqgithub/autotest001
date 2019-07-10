@@ -4,17 +4,31 @@
 from selenium import webdriver
 from kjt.login import openBro
 
-class login():
+class loginc():
 
     def login(self, driver, username, password):
         driver.get("https://zui.kjtpay.com/window/login#")
         driver.implicitly_wait(10)
         driver.maximize_window()
-        driver.find_element_by_id("userName").send_keys(username)
-        driver.find_element_by_id("userPassword").send_keys(password)
-        driver.find_element_by_class_name("login-btn").click()
+        userName = driver.find_element_by_id("userName")
+        userPassword = driver.find_element_by_id("userPassword")
+        login_btn = driver.find_element_by_class_name("login-btn")
+        #tips = driver.find_element_by_class_name("tips")
+        #logoutSpan = driver.find_element_by_id("logoutSpan")
+        elements = (userName, userPassword, login_btn)
+        elements[0].send_keys(username)
+        elements[1].send_keys(password)
+        elements[2].click()
+    def login_re(self, driver, username, password):
+        self.login(driver, username, password)
         logoutSpan = driver.find_element_by_id("logoutSpan")
         return logoutSpan
+    def loginerror(self, driver, username, password):
+        self.login(driver, username, password)
+        tips = driver.find_element_by_class_name("tips")
+        return tips
+
+
     def logout(self, driver):
         logoutSpan = driver.find_element_by_id("logoutSpan")
         logoutSpan.click()
@@ -29,6 +43,6 @@ class login():
 if __name__=="__main__":
     #driver = webdriver.Chrome()
     driver = openBro.openbroswer()
-    login().login(driver, "maqingqing", "kjt@1231")
-    login().logout(driver)
-    driver.close()
+    loginc().login(driver, "maqingqing", "kjt@1231")
+    #login().logout(driver)
+    #driver.close()
