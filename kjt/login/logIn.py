@@ -13,11 +13,14 @@ class login():
         driver.find_element_by_id("userName").send_keys(username)
         driver.find_element_by_id("userPassword").send_keys(password)
         driver.find_element_by_class_name("login-btn").click()
-        #logo = driver.find_element_by_class_name("logo-lg")
+        logoutSpan = driver.find_element_by_id("logoutSpan")
+        return logoutSpan
     def logout(self, driver):
         logoutSpan = driver.find_element_by_id("logoutSpan")
         logoutSpan.click()
         driver.find_element_by_class_name("layui-layer-btn0").click()
+        login_btn = driver.find_element_by_class_name("login-btn")
+        return login_btn
         #不是confirm、alert、prompt
         #driver.switch_to_alert().accept()
         #driver.switch_to_alert().dismiss()
