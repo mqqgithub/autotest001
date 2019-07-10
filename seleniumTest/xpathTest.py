@@ -51,26 +51,8 @@ if __name__=='__main__':
     # <input type="text" class="s_ipt" name="wd" id="kw" maxlength="100" autocomplete="off">
     # <a href="javascript:;" id="quickdelete" title="清空" class="quickdelete" style="top: 0px; right: 0px; display: none;">
     # </a></span>
-    #bro.find_element_by_xpath("//span[@id='s_kw_wrap']/input[@id='kw']").send_keys('java')
-    '''
-    xpath:索引
-    ​1.如果一个元素它的兄弟元素跟它的标签一样，这时候无法通过层级定位到。因为都是一个父亲生的，多胞胎兄弟。
-    ​2.虽然双胞胎兄弟很难识别，但是出生是有先后的，于是可以通过它在家里的排行老几定位到。
-    3.用xpath定位老大、老二和老三（这里索引是从1开始算起的，跟Python的索引不一样）'''
-    #driver.find_element_by_xpath("//select[@id='nr']/option[1]").click()
-    #driver.find_element_by_xpath("//select[@id='nr']/option[2]").click()
+    bro.find_element_by_xpath("//span[@id='s_kw_wrap']/input[@id='kw']").send_keys('java')
 
-    '''xpath:逻辑运算
-    ​1.xpath还有一个比较强的功能，是可以多个属性逻辑运算的，可以支持与（and）、或（or）、非（not）
-    ​2.一般用的比较多的是and运算，同时满足两个属性'''
-    #bro.find_element_by_xpath("//input[@id='kw' and @autocomplete='off']").text = 'java'
-    '''
-    xpath:模糊匹配
-    ​1.xpath还有一个非常强大的功能，模糊匹配
-    ​2.掌握了模糊匹配功能，基本上没有定位不到的
-    ​3.比如我要定位百度页面的超链接“hao123”,在上一篇中讲过可以通过by_link,也可以通过by_partial_link，模糊匹配定位到。当然xpath也可以有同样的功能，并且更为强大。'''
-    #bro.find_element_by_xpath("//*[contains(text(),'hao123')]").click()
-    #bro.find_element_by_xpath("//*[contains(@id,'kw')]").send_keys()
 
     time.sleep(2)
     bro.close()
