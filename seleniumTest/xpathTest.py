@@ -52,41 +52,6 @@ if __name__=='__main__':
     # <a href="javascript:;" id="quickdelete" title="清空" class="quickdelete" style="top: 0px; right: 0px; display: none;">
     # </a></span>
     bro.find_element_by_xpath("//span[@id='s_kw_wrap']/input[@id='kw']").send_keys('java')
-    '''
-    使用逻辑运算符
-    如果一个属性不能唯一的区分一个元素，我们还可以使用逻辑运算符连接多个属性来区别于其它属性。'''
-    bro.find_element_by_xpath("//input[@id='kw' and @class='su']/span/input")
-    '''
-    1.contains模糊匹配text：contains
-     如，通过模糊匹配text属性，找到百度首页的“糯米”网站超链接
-    2.模糊匹配某个属性：contains
-    3.模糊匹配以xx开头：starts-with
-    除了这个文本属性匹配是.//*[text()=‘文本’]这种格式(无@)
-    其它的属性，如id,name,class等都是.//*[@id=‘xxx’] .//*[@name=‘xxx’]这种格式
-    '''
-    driver.find_element_by_xpath("//a[contains(text(),'糯')]").click()
-    xpath("//input[contains(@id,‘xx')]")
-    driver.find_element_by_xpath("//input[contains(@class,'s_ip')]").send_keys("hao")
-    xpath("//input[starts-with(@id,‘xx') ]")
-    driver.find_element_by_xpath("//input[starts-with(@class,'s_ip')]").send_keys("hao")
-    '''
-    1.表格
-    Table表格固定格式：.//*[@id=‘表格id’]/tbody/tr[行数]/td[列数]/a
-    .//*[@id='bugList']/tbody/tr[6]/td[4]/a
-    2、参数化行和列
-    x = 6
-    y = 4
-    table = f".//*[@id='bugList']/tbody/tr[{x}]/td[{y}]/a"
-    driver.find_element_by_xpath(table).click()
-    3、根据表格标题定位后面的按钮
-    1.先通过bug的标题名称找到这一行
-    2.再找到这一行的父节点
-    3.通过父节点往下搜（编辑按钮都是固定位置）
-    
-    text = "上传多个附件"
-    t = f'.//*[text()="{text}"]/../../td[@class="text-right"]/a[@title="编辑"]'
-    driver.find_element_by_xpath(t).click()
-    '''
 
 
     time.sleep(2)
