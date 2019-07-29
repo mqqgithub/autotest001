@@ -1,11 +1,11 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from common.browser import Browser
-from utils.log import logger
+#from utils.log import logger
 
 # 浏览器页面类，主要进行浏览器页面的控制，包括获取
 class Page(Browser):
-    def __init__(self, page=None, browser_type='firefox'):
+    def __init__(self, page=None, browser_type='chrome'):
         if page:
             self.driver = page.driver
         else:
@@ -58,7 +58,8 @@ class Page(Browser):
         """
         all_windows = self.driver.window_handles
         if len(all_windows) == 1:
-            logger.warning('只有1个window!')
+            #logger.warning('只有1个window!')
+            print("只有1个window")
         elif len(all_windows) == 2:
             other_window = all_windows[1 - all_windows.index(self.current_window)]
             self.driver.switch_to.window(other_window)
@@ -67,7 +68,7 @@ class Page(Browser):
                 self.driver.switch_to.window(window)
                 if partial_url in self.driver.current_url or partial_title in self.driver.title:
                     break
-        logger.debug(self.driver.current_url, self.driver.title)
+        #logger.debug(self.driver.current_url, self.driver.title)
 
     # 切换frame页面
     def switch_to_frame(self, param):

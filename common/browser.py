@@ -41,7 +41,8 @@ class Browser(object):
 
 # 这里试验了一下保存截图的方法，保存png截图到report目录下。
 if __name__ == '__main__':
-    b = Browser('chrome').get('http://www.baidu.com')
+    b = Browser('chrome')
+    b.get('http://www.baidu.com')
     b.save_screen_shot('test_baidu')
     time.sleep(3)
     b.quit()
