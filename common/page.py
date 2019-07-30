@@ -9,7 +9,8 @@ class Page(Browser):
         if page:
             self.driver = page.driver
         else:
-            super(Page, self).__init__(browser_type=browser_type)
+            #super(Page, self).__init__(browser_type=browser_type)新式写法，同下面经典写法
+            Browser.__init__(self, browser_type=browser_type)
 
     # 获取当前窗口句柄
     @property
@@ -77,3 +78,7 @@ class Page(Browser):
     # 切换alter
     def switch_to_alert(self):
         return self.driver.switch_to.alert
+
+if __name__=="__main__":
+    p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
+    p.quit()

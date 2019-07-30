@@ -30,8 +30,9 @@ class Browser(object):
             os.makedirs(screenshot_path)
 
         tm = time.strftime('%H%M%S', time.localtime(time.time()))
-        screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
-        return screenshot
+        self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
+        #screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
+        #return screenshot
 
     def close(self):
         self.driver.close()
@@ -41,8 +42,7 @@ class Browser(object):
 
 # 这里试验了一下保存截图的方法，保存png截图到report目录下。
 if __name__ == '__main__':
-    b = Browser('chrome')
-    b.get('http://www.baidu.com')
-    b.save_screen_shot('test_baidu')
+    b = Browser('chrome').get('https://zui.kjtpay.com/window/login#')
+    b.save_screen_shot('login_page')
     time.sleep(3)
     b.quit()
