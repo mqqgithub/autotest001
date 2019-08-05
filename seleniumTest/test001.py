@@ -8,5 +8,6 @@ driver.set_window_size(1000, 800)
 driver.get("https://www.google.com")
 driver.back()
 driver.forward()
-driver.quit()#当前浏览器
-driver.close()#多个浏览器期
+driver.quit()
+driver.close()
+# close()用于关闭当前窗口，quit()用于退出驱动程序并关闭所有相关窗口。
