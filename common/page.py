@@ -12,6 +12,7 @@ class Page(Browser):
             #super(Page, self).__init__(browser_type=browser_type)新式写法，同下面经典写法
             Browser.__init__(self, browser_type=browser_type)
 
+    # @property 装饰的对象函数是一个getter函数，一般用来获取某些数据，不会向函数中传递参数 对象.函数名
     # 获取当前窗口句柄
     @property
     def current_window(self):
@@ -51,7 +52,7 @@ class Page(Browser):
     def find_elements(self, *args):
         return self.driver.find_elements(*args)
 
-    # 切换窗口
+    # 切换浏览器窗口
     def switch_to_window(self, partial_url='', partial_title=''):
         """切换窗口
             如果窗口数<3,不需要传入参数，切换到当前窗口外的窗口；
@@ -71,6 +72,7 @@ class Page(Browser):
                     break
         #logger.debug(self.driver.current_url, self.driver.title)
 
+    # frame是整个页面的框架， iframe 是内嵌的网页元素，也可以说是内嵌的框架
     # 切换frame页面
     def switch_to_frame(self, param):
         self.driver.switch_to.frame(param)
@@ -79,6 +81,8 @@ class Page(Browser):
     def switch_to_alert(self):
         return self.driver.switch_to.alert
 
+
 if __name__=="__main__":
-    p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
-    p.quit()
+    #p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
+    p = Page(browser_type='chrome').get('https://www.baidu.com')
+    #p.quit()
