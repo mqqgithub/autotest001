@@ -5,7 +5,7 @@ driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome
 #driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 driver.maximize_window()
-driver.set_window_size(1000, 800)
+#driver.set_window_size(1000, 800)
 driver.get("https://www.w3cschool.cn/")
 driver.back()
 driver.forward()
