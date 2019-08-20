@@ -31,12 +31,14 @@ class Browser(object):
 
         tm = time.strftime('%H%M%S', time.localtime(time.time()))
         self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
-        #screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
-        #return screenshot
+        # screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
+        # return screenshot
 
+    # 关闭当前窗口
     def close(self):
         self.driver.close()
 
+    # 关闭所哟窗口
     def quit(self):
         self.driver.quit()
 

@@ -1,4 +1,4 @@
-#打印信息
+# 打印信息
 import time
 from selenium import webdriver
 driver = webdriver.Chrome()
