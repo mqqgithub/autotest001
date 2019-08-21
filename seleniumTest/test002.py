@@ -16,7 +16,10 @@ driver.find_element_by_xpath("//*[@id='kw]").send_keys("python")
 driver.find_element_by_xpath("//div[@id='u1']/a[0]").send_keys("1")
 driver.find_element_by_xpath("//div[@id='hd' or @name=q']").send_keys("2")
 driver.find_element_by_xpath("//input[contains(@id,'kw')]").send_keys("python")
+# 用于知道超链接上显示的部分或全部文本信息
 driver.find_element_by_xpath("//*[contains(text(),'新闻')]").click()
+# 用Text，直接查找页面当中所有的退出二字，经常用于纯文字的查找
+driver.find_element_by_xpath('//*[text()="新闻"]').click()
 # 当标签里面含有其他标签+文字时
 driver.find_element_by_xpath("//*[contains(.'新闻')]").click()
 
