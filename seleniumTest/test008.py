@@ -12,3 +12,13 @@ for input1 in inputs:
     if input1.get_attribute('type') == 'checkbox':
         input1.click()
 driver.quit()
+
+#find_element()
+driver.find_element("id", "su")
+driver.find_element("name", "")
+driver.find_element("tag name", "")
+driver.find_element("link text", "")
+driver.find_element("partial link text", "")
+driver.find_element("class name", "")
+driver.find_element("xpath", "")
+driver.find_element("css selector", "")
