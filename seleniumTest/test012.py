@@ -26,3 +26,9 @@ driver.switch_to.window(nowhandle)
 driver.find_element_by_id("kw").send_keys(u"注册成功！")
 time.sleep(3)
 driver.quit()
+
+# 法二：
+h = driver.current_window_handle
+allhandles = driver.window_handles
+driver.switch_to.window(allhandles[1])
+driver.switch_to.window(h)
