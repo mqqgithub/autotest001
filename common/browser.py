@@ -9,7 +9,7 @@ class Browser(object):
         if self._type =="firefox":
             self.browser = webdriver.Firefox()
         if self._type =="chrome":
-            self.browser = webdriver.Chrome()
+            self.browser = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
         if self._type == "ie":
             self.browser = webdriver.Ie()
         self.driver = None

@@ -1,23 +1,26 @@
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-import time
-from selenium.webdriver.support.select import Select
+import os
+import sys
+import unittest
+# 表示导入当前路径的上层目录到搜索路径中
 
-driver= webdriver.Chrome()
-url = "https://www.baidu.com/"
-driver.get(url)
-driver.implicitly_wait(20)
-# 鼠标移动到"设置"按钮
-mouse = driver.find_element_by_link_text("设置")
-ActionChains(driver).move_to_element(mouse).perform()
-driver.find_element_by_link_text("搜索设置").click()
-#分两步：先定位下拉框，再点击选项
-s = driver.find_element_by_xpath("//*[@id='nr']")
-time.sleep(3)
-print()
-Select(s).select_by_index(0)
-time.sleep(2)
-driver.find_element_by_id("nr").find_element_by_xpath("//option[@value='20']").click()
-time.sleep(1)
-driver.find_element_by_xpath("//*[@id='nr']/option[2]").click()
+sys.path.append('..')
+class runTest():
+    def run(self, name):
+        if name == u"全部":
+            dir = os.path.join(os.path.dirname(os.getcwd()), "trademng_page_test")
+            print(dir)
+            discover = unittest.defaultTestLoader.discover(dir, '*test.py')
+            runner = unittest.TextTestRunner()
+            runner.run(discover)
+        elif name == u"登录":
+            dir = os.path.join(os.path.dirname(os.getcwd()), "trademng_page_test")
+            print(dir)
+            discover = unittest.defaultTestLoader.discover(dir, 'login_test.py')
+            runner = unittest.TextTestRunner()
+            runner.run(discover)
 
+
+
+if __name__=="__main__":
+    t = runTest()
+    t.run("全部")

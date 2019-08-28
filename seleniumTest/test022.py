@@ -102,7 +102,7 @@ if __name__ == '__main__':
     '''
     # 方法3
     test_dir = './'
-    discover = unittest.defaultTestLoader(test_dir, 'test*.py')
+    discover = unittest.defaultTestLoader.discover(test_dir, 'test*.py')
     runner = unittest.TextTestRunner()
     runner.run(discover)
 

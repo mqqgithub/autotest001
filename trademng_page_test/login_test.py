@@ -10,7 +10,7 @@ class TestLogin(unittest.TestCase):
         time.sleep(2)
         self.p.quit()
     def test_login_001(self):
-        self.p.login("maqingqing", "kjt@1231")
+        self.p.login("maqingqing", "kjt@1232")
         self.assertEqual(self.p.shouEnv(), u"马庆庆", "登录失败")
     def test_login_002(self):
         self.p.login("", "")
