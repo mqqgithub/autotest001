@@ -5,7 +5,9 @@
 作本地 window 窗口。其实，上传本地文件没我们想的那么复杂；只要定位上传按钮，通 send_keys 添加
 本地文件路径就可以了。绝对路径和相对路径都可以，关键是上传的文件存在。下面通地例子演示操作过程。'''
 from selenium import webdriver
-import os,time
+import os
+import time
+
 driver = webdriver.Firefox()
 # 打开上传文件页面
 file_path = 'file:///' + os.path.abspath('upload_file.html')
