@@ -43,3 +43,5 @@ print(counter._JustCounter__secretCount) # Python不允许实例化的类访问�
 # _foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *
 # 
 # __foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。
+
+
