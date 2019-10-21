@@ -94,6 +94,32 @@ def write_excel(path):
     workbook.save(path)
 
 
+# 如果excel文件已经存在可以直接添加单元格数据
+from openpyxl import load_workbook
+
+path = r'D:\pythonT\f1.xlsx'
+workbook = load_workbook(path)
+sheet = workbook.get_sheet_by_name('Sheet2')
+sheet.cell(1, 1, '哈哈')
+workbook.save(path)
+
+# pandas更为简单
+# 读取
+import pandas as pd
+df = pd.read_excel(r'data.xlsx',sheetname=0)
+print(df.head())
+# 写
+from pandas import DataFrame
+data={
+'name':['张三','李四','王五'],
+'age':[11,12,13]
+'sex':'男','女','男']
+}
+df= DataFrame(data)
+df.to_excel('new.xlsx")
+
+
+
 if __name__ == '__main__':
     # 设置路径
     path = 'E:/demo.xls'
