@@ -1,5 +1,7 @@
 import os
 
+# 获取当前路径
+print(os.getcwd())
 # 获取操作系统
 print(os.name)
 # 获取环境变量
@@ -16,3 +18,4 @@ os.rmdir()
 os.path.split('')
 # 删除文件
 os.remove('')
+
