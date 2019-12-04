@@ -18,7 +18,7 @@ REPORT_PATH = os.path.join(BASE_PATH, 'report')
 
 class Config:
     def __init__(self, config=CONFIG_FILE):
-        print('配置文件地址：',config)
+        print('配置文件地址：', config)
         self.config = YamlReader(config).data
 
     def get(self, element, index=0):

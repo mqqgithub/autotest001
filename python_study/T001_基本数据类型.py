@@ -15,6 +15,14 @@ print(type(f))
 b = True
 print(type(b))
 
+
+a = 5
+b = 5
+print(a/b)  # 返回浮点型
+print(a//b)  # 取整数
+print(a % b)  # 取余数
+print(a**b)  # 平方
+
 # string ################################################
 # 元素是不可变的
 string = "abcdefg"

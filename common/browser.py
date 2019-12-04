@@ -6,9 +6,9 @@ from selenium import webdriver
 class Browser(object):
     def __init__(self, browser_type='chrome'):
         self._type = browser_type.lower()
-        if self._type =="firefox":
+        if self._type == "firefox":
             self.browser = webdriver.Firefox()
-        if self._type =="chrome":
+        if self._type == "chrome":
             self.browser = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
         if self._type == "ie":
             self.browser = webdriver.Ie()
@@ -41,6 +41,7 @@ class Browser(object):
     # 关闭所哟窗口
     def quit(self):
         self.driver.quit()
+
 
 # 这里试验了一下保存截图的方法，保存png截图到report目录下。
 if __name__ == '__main__':

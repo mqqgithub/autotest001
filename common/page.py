@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from common.browser import Browser
-#from utils.log import logger
+
 
 # 浏览器页面类，主要进行浏览器页面的控制，包括获取
 class Page(Browser):
@@ -9,7 +9,7 @@ class Page(Browser):
         if page:
             self.driver = page.driver
         else:
-            #super(Page, self).__init__(browser_type=browser_type)新式写法，同下面经典写法
+            # super(Page, self).__init__(browser_type=browser_type)新式写法，同下面经典写法
             Browser.__init__(self, browser_type=browser_type)
 
     # @property 装饰的对象函数是一个getter函数，一般用来获取某些数据，不会向函数中传递参数 对象.函数名
@@ -18,7 +18,7 @@ class Page(Browser):
     def current_window(self):
         return self.driver.current_window_handle
 
-    #获取标题
+    # 获取标题
     @property
     def title(self):
         return self.driver.title
@@ -60,7 +60,7 @@ class Page(Browser):
         """
         all_windows = self.driver.window_handles
         if len(all_windows) == 1:
-            #logger.warning('只有1个window!')
+            # logger.warning('只有1个window!')
             print("只有1个window")
         elif len(all_windows) == 2:
             other_window = all_windows[1 - all_windows.index(self.current_window)]
@@ -70,7 +70,7 @@ class Page(Browser):
                 self.driver.switch_to.window(window)
                 if partial_url in self.driver.current_url or partial_title in self.driver.title:
                     break
-        #logger.debug(self.driver.current_url, self.driver.title)
+        # logger.debug(self.driver.current_url, self.driver.title)
 
     # frame是整个页面的框架， iframe 是内嵌的网页元素，也可以说是内嵌的框架
     # 切换frame页面
@@ -83,6 +83,6 @@ class Page(Browser):
 
 
 if __name__=="__main__":
-    #p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
+    # p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
     p = Page(browser_type='chrome').get('https://www.baidu.com')
-    #p.quit()
+    # p.quit()
