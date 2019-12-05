@@ -12,7 +12,8 @@ class Browser(object):
             self.browser = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
         if self._type == "ie":
             self.browser = webdriver.Ie()
-        self.driver = None
+        else:
+            self.driver = None
 
     def get(self, url, maximize_window=True, implicitly_wait=30):
         self.driver = self.browser
@@ -34,10 +35,11 @@ class Browser(object):
         # screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
         # return screenshot
 
+    # 不用
     def save_img(self, test_method): # 失败截图方法（必须要定义在class中）
         root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace('\\', '/')
         img_path = root_dir + '/img'
-        self.driver.get_screenshot_as_file('{}/{}.png'.format(img_path, test_method))
+        self.browser.get_screenshot_as_file('{}/{}.png'.format(img_path, test_method))
 
     # 关闭当前窗口
     def close(self):
