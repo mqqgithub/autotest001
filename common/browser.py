@@ -34,6 +34,11 @@ class Browser(object):
         # screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
         # return screenshot
 
+    def save_img(self, test_method): # 失败截图方法（必须要定义在class中）
+        root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace('\\', '/')
+        img_path = root_dir + '/img'
+        self.driver.get_screenshot_as_file('{}/{}.png'.format(img_path, test_method))
+
     # 关闭当前窗口
     def close(self):
         self.driver.close()
@@ -47,5 +52,7 @@ class Browser(object):
 if __name__ == '__main__':
     b = Browser('chrome').get('https://zui.kjtpay.com/window/login#')
     b.save_screen_shot('login_page')
+    time.sleep(3)
+    b.save_img('123')
     time.sleep(3)
     b.quit()

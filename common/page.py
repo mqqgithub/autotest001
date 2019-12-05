@@ -85,4 +85,5 @@ class Page(Browser):
 if __name__=="__main__":
     # p = Page(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
     p = Page(browser_type='chrome').get('https://www.baidu.com')
+    p.save_img('111')
     # p.quit()
