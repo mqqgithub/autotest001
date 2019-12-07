@@ -1,0 +1,30 @@
+一、此框架用于ui自动化和api接口自动化，结构如下：
+    common包 | browser、page常用的方法
+    utils包  | config文件夹路径，配置、mysql数据库连接、Oracle数据库连接
+    xx_page包| 页面元素及其操作
+    xx_page_test| 每个页面的测试用例
+
+二、框架结构和思想
+                                         jenkins
+                                         测试执行
+                                            |
+                                         测试用例
+                                            |
+                                         测试对象page
+                                            |
+                                         common包
+                                            |
+                                         utils包：数据库、config、log、report、email、excel
+
+三、框架搭建步骤
+    1、编写browser模块
+    2、编写page模块
+    3、编写page元素操作模块
+    4、编写测试用例模块
+    5、编写测试用例执行模块run_all
+    6、编写日志模块，为测试用例添加日志
+    7、编写report模块
+    8、编写发送邮件模块
+    9、优化模块中的路径
+    10、优化失败截图
+    11、优化。。
