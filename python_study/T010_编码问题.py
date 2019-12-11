@@ -14,7 +14,7 @@ python3中默认使用unicode
 如果服务端encode的编码格式是utf-8， 客户端内存中收到的也是utf-8编码的二进制
 
 Unicode是数据解码后的结果，所以如果数据已经是Unicode格式，则只能使用encode，如果是其他格式只能使用decode
-
+encode后ascii中的还是按照原来的编码，其他转为byte类型
 #1.win系统默认是gbk编码的，所以桌面生成的TXT之类的都是gbk编码的。
 #2.出现乱码正常都是原文件的编码方式和打开指定的编码不一致所致
 '''
