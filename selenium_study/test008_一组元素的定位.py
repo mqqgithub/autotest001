@@ -13,7 +13,14 @@ for input1 in inputs:
         input1.click()
 driver.quit()
 
-#find_element()
+'''
+    find_element()：
+    仅查找返回页面符合条件的第一个元素
+    如果定位不到元素会报错
+    find_elements()：
+    是查找多个元素并且返回一个列表
+    如果定位不到元素不会报错，返回一个空列表
+'''
 driver.find_element("id", "su")
 driver.find_element("name", "")
 driver.find_element("tag name", "")

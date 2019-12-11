@@ -35,7 +35,7 @@ class Browser(object):
         # screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
         # return screenshot
 
-    # 不用
+    # 废弃
     def save_img(self, test_method): # 失败截图方法（必须要定义在class中）
         root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace('\\', '/')
         img_path = root_dir + '/img'
