@@ -1,9 +1,10 @@
 # https://blog.csdn.net/qq_38741986/article/details/93237911
 # https://testerhome.com/topics/19900
-#
+# driver作为类BasePage的一个属性
 from common.driver_type import DriverType
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 import os
 import time
 from test_utils import config
@@ -30,7 +31,7 @@ class BasePage(object):
         self._open()
 
     # 定位方法封装
-    def find_element(self, *loc):
+    def find_ele(self, *loc):
         return self.driver.find_element(*loc)
 
     # 截图
@@ -91,7 +92,7 @@ class BasePage(object):
             self.save_img(img_name)
 
     # 查找一个元素
-    def find_element(self, loc, img_name=None):
+    def find_elem(self, loc, img_name=None):
         log.info('{} 查找元素 {}'.format(img_name, loc))
         try:
             return self.driver.find_element(*loc)
@@ -101,7 +102,7 @@ class BasePage(object):
             self.save_img(img_name)
 
     # 查找一组元素
-    def find_elements(self, loc, img_name=None):
+    def find_elems(self, loc, img_name=None):
         log.info('{} 查找元素 {}'.format(img_name, loc))
         try:
             return self.driver.find_elements(*loc)
@@ -113,7 +114,7 @@ class BasePage(object):
     # 输入文本操作
     def input_text(self, loc, text, img_name=None):
         # 查找元素
-        ele = self.find_element(loc, img_name)
+        ele = self.find_elem(loc, img_name)
         # 输入操作
         log.info('{} 在元素 {} 中输入文本: {}'.format(img_name, loc, text))
         try:
@@ -125,7 +126,7 @@ class BasePage(object):
 
     # 清除操作
     def clean_input_text(self, loc, img_name=None):
-        ele = self.find_element(loc, img_name)
+        ele = self.find_elem(loc, img_name)
         # 清除操作
         log.info('{} 在元素 {} 中清除'.format(img_name, loc))
         try:
@@ -138,7 +139,7 @@ class BasePage(object):
     # 点击操作
     def click_element(self, loc, img_name=None):
         # 先查找元素在点击
-        ele = self.find_element(loc, img_name)
+        ele = self.find_elem(loc, img_name)
         # 点击操作
         log.info('{} 在元素 {} 中点击'.format(img_name, loc))
         try:
@@ -151,7 +152,7 @@ class BasePage(object):
     # 获取文本内容
     def get_text(self, loc, img_name=None):
         # 先查找元素在获取文本内容
-        ele = self.find_element(loc, img_name)
+        ele = self.find_elem(loc, img_name)
         # 获取文本
         log.info('{} 在元素 {} 中获取文本'.format(img_name, loc))
         try:
@@ -164,13 +165,13 @@ class BasePage(object):
             self.save_img(img_name)
 
     # 获取属性值
-    def get_element_attribute(self, loc, img_name=None):
+    def get_element_attribute(self, loc, attr, img_name=None):
         # 先查找元素在去获取属性
-        ele = self.find_element(loc, img_name)
+        ele = self.find_elem(loc, img_name)
         # 获取元素属性值
         log.info('{} 在元素 {} 中获取属性值'.format(img_name, loc))
         try:
-            ele_attribute = ele.get_attribute()
+            ele_attribute = ele.get_attribute(attr)
             log.info('{} 元素 {} 的文本内容为 {}'.format(img_name, loc, ele_attribute))
             return ele_attribute
         except:
@@ -223,6 +224,30 @@ class BasePage(object):
             log.exception('切换窗口失败!!!')
             # 截图
             self.save_img(img_name)
+
+    # 执行js脚本
+    def execute(self, js, *args):
+        log.info('执行js脚本')
+        try:
+            self.driver.execute_script(js, *args)
+        except Exception as e:
+            log.info(e)
+
+    # 移动到指定元素
+    def move_to(self, element):
+        log.info('鼠标移动到元素上')
+        try:
+           ActionChains(self.driver).move_to_element(element).perform()
+        except Exception as e:
+            log.info(e)
+
+    # 关闭当前窗口
+    def close(self):
+        self.driver.close()
+
+    # 关闭所哟窗口
+    def quit(self):
+        self.driver.quit()
 
 
 if __name__ == '__main__':
