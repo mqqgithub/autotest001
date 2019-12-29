@@ -2,7 +2,7 @@ import time
 import unittest
 from trademng_page.login_page import LoginPage
 from test_utils.log import TestLog
-from BeautifulReport import BeautifulReport
+# from BeautifulReport import BeautifulReport
 
 log = TestLog().get_log()
 
