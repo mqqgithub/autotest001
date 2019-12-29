@@ -14,7 +14,7 @@ class DriverType(object):
         if self._type == "ie":
             self.browser = webdriver.Ie()
         else:
-            self.driver = None
+            self.browser = None
 
     def get(self, url):
         self.driver = self.browser
