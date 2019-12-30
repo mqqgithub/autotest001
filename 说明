@@ -22,7 +22,7 @@
     3、编写page模块继承base_page
     4、编写测试用例模块
     5、编写测试用例执行模块run_all
-    6、编写日志模块，为测试用例添加日志
+    6、编写日志模块，为测试用例添加日志,BeautifulReport 扩展包需要手动copy到site-packages文件夹下面
     7、编写report模块
     8、编写发送邮件模块
     9、优化模块中的路径
