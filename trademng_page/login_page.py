@@ -22,18 +22,16 @@ class LoginPage(BasePage):
         # self.find_element(*self.loc_login_btn).click()
         self.click_element(self.loc_login_btn, 'login_btn')
 
-    # 登录校验提示
+    # 登录成功，跳转页面显示用户名控件
     def shouEnv(self):
-        return self.get_text(self.loc_showEnv_a, '提示')
+        return self.get_text(self.loc_showEnv_a, '登录成功显示用户名提示')
 
-    # 登录失败提示
+    # 登录失败页面提示控件
     def passwordError(self):
-        return self.get_text(self.loc_passwordError_p).text
+        return self.get_text(self.loc_passwordError_p, '登录失败页面提示错误信息')
 
 
 if __name__ == '__main__':
-    dr = DriverType("chrome").get("https://zui.kjtpay.com/window/index#")
-    #page = BasePage(dr)
-    p = LoginPage(dr)
+    p = LoginPage()
     p.login("maqingqing", "kjt@1233")
     p.quit()

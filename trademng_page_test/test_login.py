@@ -2,14 +2,15 @@ import time
 import unittest
 from trademng_page.login_page import LoginPage
 from test_utils.log import TestLog
-# from BeautifulReport import BeautifulReport
+from BeautifulReport import BeautifulReport
 
 log = TestLog().get_log()
+
 
 class TestLogin(unittest.TestCase):
 
     def setUp(self):
-        self.p = LoginPage(browser_type='chrome').get('https://zui.kjtpay.com/window/login#')
+        self.p = LoginPage()
 
     def tearDown(self):
         time.sleep(2)
@@ -31,17 +32,16 @@ class TestLogin(unittest.TestCase):
         self.p.login("", "")
         self.assertEqual(self.p.passwordError(), u"请输入正确的用户名称")
 
-
     def test_login_003(self):
         log.info('登录测试：登录用户名为空，密码不为空')
         self.p.login("", "123")
         self.assertEqual(self.p.passwordError(), u"请输入正确的用户名称")
 
-
     def test_login_004(self):
         log.info("登录测试：登录用户名bu 为空，密码为空")
         self.p.login("maqingqing", "")
-        self.assertEqual(self.p.passwordError(), u"请输入正确的密码！")
+        self.assertEqual(self.p.passwordError(), u"请输入正确的密码")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

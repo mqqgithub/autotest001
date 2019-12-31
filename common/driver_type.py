@@ -3,21 +3,21 @@ from selenium import webdriver
 
 class DriverType(object):
 
-    chromedriver_path = "C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe"
+    chrome_driver_path = "C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe"
+    browser = 'chrome'
+    URL = "https://zui.kjtpay.com/window/index#"
 
-    def __init__(self, browser_type='chrome'):
+    def __init__(self, browser_type=browser):
         self._type = browser_type.lower()
         if self._type == "firefox":
-            self.browser = webdriver.Firefox()
+            self.driver = webdriver.Firefox()
         if self._type == "chrome":
-            self.browser = webdriver.Chrome(DriverType.chromedriver_path)
+            self.driver = webdriver.Chrome(DriverType.chrome_driver_path)
         if self._type == "ie":
-            self.browser = webdriver.Ie()
-        else:
-            self.browser = None
+            self.driver = webdriver.Ie()
 
-    def get(self, url):
-        self.driver = self.browser
+    def get_url(self, url=URL):
+
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
         self.driver.get(url)
@@ -25,5 +25,5 @@ class DriverType(object):
 
 
 if __name__ == "__main__":
-    url = "https://zui.kjtpay.com/window/index#"
-    driver = DriverType("chrome").get(url)
+    driver = DriverType().get_url("https://www.baidu.com")
+    driver.close()

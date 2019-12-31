@@ -16,9 +16,9 @@ log = TestLog().get_log()
 # 创建基础类
 class BasePage(object):
     # 初始化
-    def __init__(self, driver):
+    def __init__(self):
         self.base_url = 'https://zui.kjtpay.com/window/login#'
-        self.driver = driver
+        self.driver = DriverType().get_url()
         self.timeout = 30
 
     # 打开页面
@@ -251,5 +251,5 @@ class BasePage(object):
 
 
 if __name__ == '__main__':
-    dr = DriverType("chrome").get("https://zui.kjtpay.com/window/index#")
-    page = BasePage(dr)
+    page = BasePage()
+    page.quit()

@@ -97,7 +97,7 @@ print("len(tup1) ", len(tup1))
 # 一个无序不可重复的序列
 setDemo = {"a", "b", "c"}
 print("集合A ", setDemo)
-#集合可以做 交集并集差集
+# 集合可以做 交集并集差集
 setDemo2 = {"a", "b"}
 print("集合B ", setDemo2)
 print("AB的差集 ", setDemo - setDemo2)
