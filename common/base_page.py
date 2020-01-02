@@ -22,18 +22,21 @@ class BasePage(object):
         self.timeout = 30
 
     # 打开页面
+    '''
     def _open(self):
         url = self.base_url
         self.driver.get(url)
         # self.driver.switch_to.frame('login_frame')  #切换到登录窗口的iframe
-
+    '''
+    '''
     def open(self):
         self._open()
-
+    '''
     # 定位方法封装
+    '''
     def find_ele(self, *loc):
         return self.driver.find_element(*loc)
-
+    '''
     # 截图
     def save_img(self, img_name=None):
         day = time.strftime('%Y%m%d', time.localtime(time.time()))

@@ -8,47 +8,81 @@
 # a+  打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。
 # 注：后面有带b的方式，不需要考虑编码方式。有带+号的，则可读可写，不过它们之间还是有区别的
 # 读取文件 r 表示只读 read读取的是全部字符
+'''
 f = open(r'D:/autotest001/test.py', 'r')
+print(type(f))
 content1 = f.read()
+print(type(content1))
+print("************")
 print(content1)
+print("************读取文件末尾会多出的空行，指针对到这一行")
+print(content1.rstrip())
+print("************")
+f.close()
+'''
+
+# 这样子并没有用readlines() 而是用了循环这样子,但是文本不能拿到循环体外使用
+
+f = open(r'D:/autotest001/test.py', 'r')
+for lines in f:
+    print(lines)
+
+print(lines)
 f.close()
 
+
+
+
 # readlines读取全部的行，返回的是list
+'''
 f = open(r'D:/autotest001/test.py', 'r')
 content2 = f.readlines()
 print(content2)
 f.close()
+'''
 
 # readline每次只读取第一行，可以循环获取行
+'''
 f = open(r'D:/autotest001/test.py', 'r')
 content3 = f.readline()
 print(content3)
 f.close()
+'''
 
 # 使用with则不需要close文件
+'''
 with open(r'D:/autotest001/test.py', 'r') as f:
     con4 = f.readlines()
 print(con4)
+'''
 
 # 如果文件是ascll则可以直接使用以上方式打开，但是如果文件是二进制文件则需要用rb
+'''
 with open(r'D:/autotest001/test.py', 'rb') as f:
     con5 = f.read()
 print(con5)
+'''
 
 # 如果文件是要读取非ASCII编码的文本文件，就必须以二进制模式打开，再解码。比如GBK编码的文件：
+'''
 with open(r'D:/autotest001/test.py', 'rb') as f:
     con6 = f.read().decode('gbk')
 print(con6)
+'''
 
 # 如果每次都这么手动转换编码嫌麻烦，Python还提供了一个codecs模块帮我们在读文件时自动转换编码，直接读unicode：
+'''
 import codecs
 with codecs.open(r'D:/autotest001/test.py', 'rb') as f:
     con7 = f.read()
     print(con7)
+    '''
 
 # 写文件同样是使用open但是参数是用w写入文本，wb写入二进制文件
 #with open(r'D:/autotest001/test.py', 'r+') as f:
 #    f.write('444')
+'''
 with open(r'D:/autotest001/test.py', 'r+') as f1:
     con8 = f1.read()
     print(con8)
+'''
