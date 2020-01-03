@@ -5,13 +5,14 @@ from common.base_page import BasePage
 # 封装的百度首页
 class LoginPage(BasePage):
 
-    loc_username_input = (By.ID, 'userName')
-    loc_password_btn = (By.ID, 'userPassword')
-    loc_login_btn = (By.CLASS_NAME, 'login-btn')
-    loc_showEnv_a = (By.ID, 'showEnv')
-    loc_passwordError_p = (By.XPATH, '//*[@id="passwordError"]/p')
-    loc_more_a = (By.CLASS_NAME, "showMore")
-    loc_system_a = (By.XPATH, "//a[@data-sys-name='trademng']")
+    def __init__(self):
+        self.loc_username_input = (By.ID, 'userName')
+        self.loc_password_btn = (By.ID, 'userPassword')
+        self.loc_login_btn = (By.CLASS_NAME, 'login-btn')
+        self.loc_showEnv_a = (By.ID, 'showEnv')
+        self.loc_passwordError_p = (By.XPATH, '//*[@id="passwordError"]/p')
+        self.loc_more_a = (By.CLASS_NAME, "showMore")
+        self.loc_system_a = (By.XPATH, "//a[@data-sys-name='trademng']")
 
     # 登录功能
     def login(self, user_name, user_password):

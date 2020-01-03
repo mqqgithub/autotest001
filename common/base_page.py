@@ -1,14 +1,17 @@
 # https://blog.csdn.net/qq_38741986/article/details/93237911
 # https://testerhome.com/topics/19900
 # driver作为类BasePage的一个属性
-from common.driver_type import DriverType
+import os
+import time
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-import os
-import time
+from selenium.webdriver.support.select import Select
+
 from test_utils import config
 from test_utils.log import TestLog
+from common.driver_type import DriverType
 
 log = TestLog().get_log()
 
@@ -16,9 +19,8 @@ log = TestLog().get_log()
 # 创建基础类
 class BasePage(object):
     # 初始化
-    def __init__(self):
-        self.base_url = 'https://zui.kjtpay.com/window/login#'
-        self.driver = DriverType().get_url()
+    def __init__(self, url="统一登录"):
+        self.driver = DriverType().get_url(url)
         self.timeout = 30
 
     # 打开页面
@@ -152,6 +154,41 @@ class BasePage(object):
             # 截图
             self.save_img(img_name)
 
+    # 下拉框选择
+    def select_element(self, loc, select_text, img_name=None):
+        # 找到select元素控件
+        ele = self.find_elem(loc, img_name)
+        # 引用Select类
+        log.info("定位select控件{}{}".format(loc, img_name))
+        try:
+            Select(ele).select_by_visible_text(select_text)
+        except Exception as e:
+            # log.exception(sys.exc_info())
+            log.info(e)
+            log.info("定位select控件{}失败" .format(loc))
+            self.save_img(img_name)
+
+    # loc=("id","xxx")
+    def input_time_readonly(self, loc, t, img_name):
+
+        # 找到时间控件
+        ele = self.find_elem(loc, img_name)
+        log.info("去掉{}只读属性输入时间".format(loc))
+        # js = 'document.getElementById("train_date").removeAttribute("readonly");'
+        # js_value = 'document.getElementById("train_date").value="2016-12-25"'
+
+        js1 = "document.getElementBy"+loc[0].title()+"('"
+        js2 = "').removeAttribute('readonly')"
+        js3 = ").value='"+t+"'"
+        js = js1+loc[1]+js2
+        js_value = js1+js3
+        try:
+            self.driver.execute(js)
+            self.driver.execute(js_value)
+        except Exception as e:
+            log.info(e)
+            log.info("时间控件输入失败")
+
     # 获取文本内容
     def get_text(self, loc, img_name=None):
         # 先查找元素在获取文本内容
@@ -237,10 +274,10 @@ class BasePage(object):
             log.info(e)
 
     # 移动到指定元素
-    def move_to(self, element):
+    def move_to(self, loc):
         log.info('鼠标移动到元素上')
         try:
-           ActionChains(self.driver).move_to_element(element).perform()
+           ActionChains(self.driver).move_to_element(loc).perform()
         except Exception as e:
             log.info(e)
 
@@ -254,5 +291,5 @@ class BasePage(object):
 
 
 if __name__ == '__main__':
-    page = BasePage()
+    page = BasePage("百度")
     page.quit()

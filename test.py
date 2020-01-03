@@ -1,24 +1,9 @@
-class Employee:
-    "dco__doc"
-    emp_count = 0
+js="document.getElementById('promote_start_date').removeAttribute('readonly')"
+s1 = "document.getElementById('"
+s2 = "promote_start_date"
+s3 = "').removeAttribute('readonly')"
+s = s1+s2+s3
+print(s)
 
-    def __init__(self, name, salary):
-        self.name = name
-        self.salary = salary
-        Employee.emp_count +=1
-
-    def display_count(self):
-        print("Total Employee %d" % Employee.emp_count)
-
-    def display_employee(self):
-        self.age = 12
-        print(self.age)
-        print("name:  ", self.name)
-        print("salary:  ", self.salary)
-        print(self, self.__class__)
-
-
-emp1 = Employee('jack', 10000)
-emp1.display_employee()
-
-from selenium.webdriver.common.action_chains import ActionChains
+sss = "name"
+print(sss.title())
