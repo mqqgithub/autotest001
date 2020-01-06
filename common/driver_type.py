@@ -17,17 +17,22 @@ class DriverType(object):
         if self._type == "ie":
             self.driver = webdriver.Ie()
 
-    def get_url(self, url="统一登录"):
+    '''    def get_url(self, url="统一登录"):
         if url == "统一登录":
             self.driver.get(self.URL["统一登录"])
+            return self.driver
         if url == "百度":
             self.driver.get(self.URL["百度"])
+            return self.driver
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(5)'''
+    def get_url(self):
+        self.driver.get(self.URL["统一登录"])
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
-
         return self.driver
 
 
 if __name__ == "__main__":
-    driver = DriverType().get_url()
+    driver = DriverType().get_url(url="统一登录")
     driver.close()

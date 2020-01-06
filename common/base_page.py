@@ -11,7 +11,7 @@ from selenium.webdriver.support.select import Select
 
 from test_utils import config
 from test_utils.log import TestLog
-from common.driver_type import DriverType
+
 
 log = TestLog().get_log()
 
@@ -19,8 +19,9 @@ log = TestLog().get_log()
 # 创建基础类
 class BasePage(object):
     # 初始化
-    def __init__(self, url="统一登录"):
-        self.driver = DriverType().get_url(url)
+    def __init__(self, driver):
+
+        self.driver = driver
         self.timeout = 30
 
     # 打开页面
@@ -29,13 +30,11 @@ class BasePage(object):
         url = self.base_url
         self.driver.get(url)
         # self.driver.switch_to.frame('login_frame')  #切换到登录窗口的iframe
-    '''
-    '''
+
     def open(self):
         self._open()
-    '''
+  
     # 定位方法封装
-    '''
     def find_ele(self, *loc):
         return self.driver.find_element(*loc)
     '''
@@ -219,7 +218,7 @@ class BasePage(object):
             self.save_img(img_name)
 
     # iframe 切换
-    def switch_iframe(self, frame_refer, timeout=20, poll_frequency=0.5, img_name=None):
+    def switch_iframe(self, frame_refer, timeout=20, poll_frequency=0.5, img_name="iframe定位错误"):
         # 等待 iframe 存在
         log.info('iframe 切换操作:')
         try:
@@ -232,6 +231,26 @@ class BasePage(object):
             log.exception('iframe 切换失败!!!')
             # 截图
             self.save_img(img_name)
+
+    def switch_iframe_back_to_default(self):
+        # 切回默认主页面
+        log.info("iframe返回主页面")
+        try:
+            self.driver.switch_to.default_content()
+
+        except Exception as e:
+            log.info(e)
+            log.info("iframe返回主页面失败")
+
+    def switch_iframe_to_parent(self):
+        # iframe返回上一级iframe
+        log.info("iframe返回上一级iframe")
+        try:
+            self.driver.switch_to.parent_frame()
+
+        except Exception as e:
+            log.info(e)
+            log.info("iframe返回上一级iframe失败")
 
     # 窗口切换 = 如果是切换到新窗口,new. 如果是回到默认的窗口,default
     def switch_window(self, name, cur_handles=None, timeout=20, poll_frequency=0.5, img_name=None):
@@ -291,5 +310,6 @@ class BasePage(object):
 
 
 if __name__ == '__main__':
-    page = BasePage("百度")
+    page = BasePage()
+
     page.quit()

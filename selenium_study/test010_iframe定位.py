@@ -30,3 +30,43 @@ driver.switch_to.default_content()
 time.sleep(3)
 driver.quit()
 
+'''
+def test_57o4(self):
+        """expected_conditions模块下的frame_to_be_available_and_switch_to_it()"""
+        # frame_to_be_available_and_switch_to_it() 判断该frame是否可以switch进去
+        # 如果直接传入定位方式id，可以的话就返回True并switch进去，否则返回False
+        # 也可传入locator元组或WebElement，可以的话就返回True并switch进去，否则报错，找不到定位
+
+        from selenium.webdriver.support.wait import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(5)
+        self.driver.get("https://mail.qq.com/")
+        print('0', time.ctime())
+        # <iframe id="login_frame" name="login_frame" height="100%" scrolling="no" width="100%" frameborder="0" src="https://xui.ptlogin2.qq.com/cgi-bin/xlogin?target=self&amp;appid=522005705&amp;daid=4&amp;s_url=https://mail.qq.com/cgi-bin/readtemplate?check=false%26t=loginpage_new_jump%26vt=passport%26vm=wpt%26ft=loginpage%26target=&amp;style=25&amp;low_login=1&amp;proxy_url=https://mail.qq.com/proxy.html&amp;need_qr=0&amp;hide_border=1&amp;border_radius=0&amp;self_regurl=http://zc.qq.com/chs/index.html?type=1&amp;app_id=11005?t=regist&amp;pt_feedback_link=http://support.qq.com/discuss/350_1.shtml&amp;css=https://res.mail.qq.com/zh_CN/htmledition/style/ptlogin_input24e6b9.css"></iframe>
+
+        # 直接传入定位方式id
+        # print(EC.frame_to_be_available_and_switch_to_it('login_frame')(self.driver))        # 正确的 返回True并switch进去
+        # print(EC.frame_to_be_available_and_switch_to_it('login_frame123')(self.driver))     # 错误的 返回False
+
+        # 传入locator元组
+        # print(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR, 'iframe[frameborder="0"][width="100%"]'))(self.driver))       # 正确的 返回True并switch进去
+        # print(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR, 'iframe[frameborder="10"]'))(self.driver))    # 报错 Message: no such element
+
+        # 传入WebElement
+        abcd = self.driver.find_element(By.XPATH, '//iframe[@height="100%" and @scrolling="no"]')       # 正确的 返回True并switch进去
+        # abcd = self.driver.find_element(By.XPATH, '//iframe[@height="1000%" and @scrolling="no123"]')       # 报错 Message: no such element
+        print(EC.frame_to_be_available_and_switch_to_it(abcd)(self.driver))
+
+        self.driver.find_element_by_id("switcher_plogin").click()
+        self.driver.find_element_by_id("u").clear()
+        self.driver.find_element_by_id("u").send_keys('987654')
+        self.driver.switch_to.default_content()
+        print('1', time.ctime())
+
+        time.sleep(1)
+        self.driver.quit(
+# ###############################################################
+# 原文链接：https://blog.csdn.net/zyooooxie/article/details/84033754
+'''

@@ -1,9 +1,15 @@
-js="document.getElementById('promote_start_date').removeAttribute('readonly')"
-s1 = "document.getElementById('"
-s2 = "promote_start_date"
-s3 = "').removeAttribute('readonly')"
-s = s1+s2+s3
-print(s)
+from selenium.webdriver.common.by import By
+from common.base_page import BasePage
+import time
 
-sss = "name"
-print(sss.title())
+class Test(BasePage):
+    def __init__(self):
+        self.loc_username_input = (By.ID, 'userName')
+    def test1(self):
+        self.input_text(self.loc_username_input, "123")
+        time.sleep(5)
+
+
+if __name__=="__main__":
+    p=Test()
+    p.test1()
