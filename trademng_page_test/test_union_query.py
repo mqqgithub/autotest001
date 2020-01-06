@@ -2,7 +2,7 @@ import time
 
 import unittest
 # from BeautifulReport import BeautifulReport
-
+from trademng_page.login_page import LoginPage
 from trademng_page.union_query_page import UnionQuery
 from common.driver_type import DriverType
 from test_utils.log import TestLog
@@ -16,13 +16,14 @@ class TestUnionQuery(unittest.TestCase):
     def setUp(self):
         self.driver = DriverType().get_url()
         self.p = UnionQuery(self.driver)
+        self.p2 = LoginPage(self.driver)
         time.sleep(1)
 
     def tearDown(self):
-        self.p.close()
+        self.driver.close()
 
     def test001(self):
-
+        self.p2.login("maqingqing", "kjt@1233")
         self.result = self.p.test_union_query("全部", "2020-01-03 01:30:14", "2020-01-06 23:30:14",
                                               "交易凭证号", "101157829023092808873")
         #self.assertEqual(self.result[0], "101157829023092808873")
