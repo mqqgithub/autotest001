@@ -11,9 +11,9 @@ class UnionQuery(BasePage):
 
 
     # 查询管理
-    loc_query_manage_a = (By.XPATH, "//a[contains(.'查询管理')]")
+    loc_query_manage_a = (By.XPATH, '//*[@id="848402AF91CD068AE0530A07FF0A5102"]/a')
     # 联合查询
-    loc_union_query_a = (By.XPATH, "//a[contains(.'联合查询')]")
+    loc_union_query_a = (By.XPATH, '//*[@id="848402AF9224068AE0530A07FF0A5102"]/a')
     # 查询定义
     loc_defineId_select = (By.ID, "defineId")
     # 订单提交时间-开始时间

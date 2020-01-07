@@ -13,18 +13,18 @@ mouse = driver.find_element_by_link_text("设置")
 ActionChains(driver).move_to_element(mouse).perform()
 driver.find_element_by_link_text("搜索设置").click()
 # --------------------------一定要设置等待时间
-time.sleep(2)
-driver.find_element_by_xpath("//*[@id='nr']/option[2]").click()
+#time.sleep(2)
+#driver.find_element_by_xpath("//*[@id='nr']/option[2]").click()
 # --------------------------
-time.sleep(2)
-driver.find_element_by_id("nr").find_element_by_xpath("//option[1]").click()
+#time.sleep(2)
+#driver.find_element_by_id("nr").find_element_by_xpath("//option[1]").click()
 # --------------------------
-time.sleep(2)
+#time.sleep(2)
 s = driver.find_element_by_id("nr")
-Select(s).select_by_index(0)
+#Select(s).select_by_index(0)
 # --------------------------
-time.sleep(2)
-Select(s).select_by_value("20")
+#time.sleep(2)
+#Select(s).select_by_value("20")
 # --------------------------
 time.sleep(2)
 Select(s).select_by_visible_text("每页显示50条")

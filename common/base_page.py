@@ -300,7 +300,7 @@ class BasePage(object):
         except Exception as e:
             log.info(e)
 
-    # 关闭当前窗口
+    # 关闭当前窗口, 但是没有关闭进程，尽量不要使用
     def close(self):
         self.driver.close()
 

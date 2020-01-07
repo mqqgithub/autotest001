@@ -23,9 +23,10 @@ class TestUnionQuery(unittest.TestCase):
         self.driver.close()
 
     def test001(self):
-        self.p2.login("maqingqing", "kjt@1233")
+        self.p2.login_to_system()
         self.result = self.p.test_union_query("全部", "2020-01-03 01:30:14", "2020-01-06 23:30:14",
                                               "交易凭证号", "101157829023092808873")
+        print(self.result)
         #self.assertEqual(self.result[0], "101157829023092808873")
 
     def test002(self):
