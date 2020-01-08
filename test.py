@@ -24,8 +24,9 @@ select = driver.find_element_by_id('defineId')
 
 Select(select).select_by_visible_text("全部")
 try:
-    js1 = "document.getElementById('startTime').removeAttribute('readonly')"
-    driver.execute_script(js1)
+    js1 = "document.getElementById('"
+    js = js1 + "startTime').removeAttribute('readonly')"
+    driver.execute_script(js)
     # driver.find_element_by_xpath('//*[@id="startTime"]').clear()
     driver.find_element_by_id('startTime').clear()
     driver.find_element_by_xpath('//*[@id="startTime"]').send_keys('2019-12-31 23:08:52')

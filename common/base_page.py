@@ -3,17 +3,17 @@
 # driver作为类BasePage的一个属性
 import os
 import time
-
+# from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 
 from test_utils import config
-from test_utils.log import TestLog
+from test_utils.log import Log
 
 
-log = TestLog().get_log()
+log = Log()
 
 
 # 创建基础类
@@ -24,20 +24,6 @@ class BasePage(object):
         self.driver = driver
         self.timeout = 30
 
-    # 打开页面
-    '''
-    def _open(self):
-        url = self.base_url
-        self.driver.get(url)
-        # self.driver.switch_to.frame('login_frame')  #切换到登录窗口的iframe
-
-    def open(self):
-        self._open()
-  
-    # 定位方法封装
-    def find_ele(self, *loc):
-        return self.driver.find_element(*loc)
-    '''
     # 截图
     def save_img(self, img_name=None):
         day = time.strftime('%Y%m%d', time.localtime(time.time()))
@@ -178,12 +164,14 @@ class BasePage(object):
 
         js1 = "document.getElementBy"+loc[0].title()+"('"
         js2 = "').removeAttribute('readonly')"
-        js3 = ").value='"+t+"'"
+        js3 = "').value=" + "'" + t + "'"
         js = js1+loc[1]+js2
-        js_value = js1+js3
+        js_value = js1 + loc[1] + js3
+        log.info(js_value)
         try:
-            self.driver.execute(js)
-            self.driver.execute(js_value)
+            self.driver.execute_script(js)
+            ele.clear()
+            self.driver.execute_script(js_value)
         except Exception as e:
             log.info(e)
             log.info("时间控件输入失败")
@@ -306,10 +294,13 @@ class BasePage(object):
 
     # 关闭所哟窗口
     def quit(self):
+        log.info('关闭浏览器进程')
         self.driver.quit()
 
 
 if __name__ == '__main__':
-    page = BasePage()
-
-    page.quit()
+    pass
+    # dr = webdriver.Chrome()
+    # dr.get("https://www.baidu.com")
+    # page = BasePage(dr)
+    # page.quit()

@@ -5,10 +5,9 @@ from BeautifulReport import BeautifulReport
 
 from common.driver_type import DriverType
 from trademng_page.login_page import LoginPage
-from test_utils.log import TestLog
+from test_utils.log import Log
 
-
-log = TestLog().get_log()
+log = Log()
 
 
 class TestLogin(unittest.TestCase):
@@ -22,7 +21,7 @@ class TestLogin(unittest.TestCase):
 
     def tearDown(self):
         time.sleep(2)
-        self.driver.close()
+        self.driver.quit()
 
     def test_login_001(self):
         """登录测试：登录成功(报告描述中展示, 必须在首行)"""
@@ -38,18 +37,21 @@ class TestLogin(unittest.TestCase):
     # 不执行该用例
     @BeautifulReport.stop
     def test_login_002(self):
+        """ 登录测试：登录用户名为空，密码为空"""
         log.info('登录测试：登录用户名为空，密码为空')
 
         self.p.login("", "")
         self.assertEqual(self.p.passwordError(), u"请输入正确的用户名称")
 
     def test_login_003(self):
+        """登录测试：登录用户名为空，密码不为空"""
         log.info('登录测试：登录用户名为空，密码不为空')
 
         self.p.login("", "123")
         self.assertEqual(self.p.passwordError(), u"请输入正确的用户名称")
 
     def test_login_004(self):
+        """登录测试：登录用户名bu 为空，密码为空"""
         log.info("登录测试：登录用户名bu 为空，密码为空")
 
         self.p.login("maqingqing", "")

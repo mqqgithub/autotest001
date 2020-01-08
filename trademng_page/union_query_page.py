@@ -2,6 +2,7 @@
 
 
 '''
+import time
 from selenium.webdriver.common.by import By
 from common.base_page import BasePage
 from trademng_page.login_page import LoginPage
@@ -29,7 +30,7 @@ class UnionQuery(BasePage):
     # 重置
     loc_reset_btn = (By.ID, "btn-reset")
     # 查询有结果
-    loc_result_table = (By.XPATH, "")
+    loc_result_table = (By.XPATH, '//*[@id="contentId"]/div/div/table/tbody/tr/td[1]')
     # 查询无结果提示
     loc_no_result_div = (By.XPATH, "/html/body/div[1]/section[2]/div/div/div/div/div")
     # iframe
@@ -43,8 +44,10 @@ class UnionQuery(BasePage):
         self.click_element(self.loc_query_manage_a, '点击查询管理')
         # 点击联合查询
         self.click_element(self.loc_union_query_a, '点击联合查询')
+        time.sleep(1)
         # 切换iframe
         self.switch_iframe(self.loc_iframe)
+        time.sleep(1)
         # 下拉框选择查询定义
         self.select_element(self.loc_defineId_select, query_define, '下拉框选择查询定义')
         # 输入订单提交开始时间
@@ -58,10 +61,13 @@ class UnionQuery(BasePage):
         # 单击查询
         self.click_element(self.loc_query_btn, '单击查询')
         # 断言查询结果
-        return self.find_elem(self.loc_result_table, '查询有结果'), \
-               self.find_elem(self.loc_no_result_div, '查询无结果提示')
+        time.sleep(6)
+        if self.find_elems(self.loc_result_table, '查询有结果'):
+            return self.get_text(self.loc_result_table, '查询有结果')
+        else:
+            return self.get_text(self.loc_no_result_div, '查询无结果提示')
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     p = UnionQuery()
     p.test_union_query("全部", "", "", "")
