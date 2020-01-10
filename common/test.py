@@ -1,4 +1,4 @@
-#coding=gbk
-x = 'ÉÌ»§'
+#coding=utf-8
+x = 'å•†æˆ·'
 print(x)
 print(x.encode('utf-8'))
