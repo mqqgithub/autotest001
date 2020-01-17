@@ -37,7 +37,7 @@ class LoginPage(BasePage):
 
     #  登录并定位到对应的测试系统
     def login_to_system(self):
-        self.login("maqingqing", "kjt@1233")
+        self.login("maqingqing", "kjt@1123")
         self.click_element(self.loc_more_a, "点更多按钮方便选择系统")
         self.click_element(self.loc_system_a, "点击选择系统")
 

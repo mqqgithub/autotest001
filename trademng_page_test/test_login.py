@@ -29,7 +29,7 @@ class TestLogin(unittest.TestCase):
         print('登录测试：登录成功,详情中展示')
         print("test start")
 
-        self.p.login("maqingqing", "kjt@1233")
+        self.p.login("maqingqing", "kjt@1123")
         self.assertEqual(self.p.shouEnv(), u"马庆庆", "登录失败")
 
         print("test ending")
