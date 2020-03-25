@@ -1,4 +1,4 @@
-# Python一共有数据类型
+# Python基本数据类型
 # Number(数字)--int\float\bool\complex
 # string(字符串)
 # List(列表)--有序
@@ -8,7 +8,7 @@
 
 # Number ################################################
 i = 1
-print('数字：%d' % i)#如果不是string的不能直接用+，必须用占位符%d数字  %s代表字符串
+print('数字：%d' % i)  # 如果不是string的不能直接用+，必须用占位符%d数字  %s代表字符串
 print(type(i))
 f = 1.2
 print(type(f))
@@ -17,7 +17,7 @@ print(type(b))
 
 
 a = 5
-b = 5
+b = 3
 print(a/b)  # 返回浮点型
 print(a//b)  # 取整数
 print(a % b)  # 取余数
@@ -25,25 +25,28 @@ print(a**b)  # 平方
 
 # string ################################################
 # 元素是不可变的
-string = "abcdefg"
+
+string = 'abcdefg'
 print(string)
 print(string[0])
-print(string[0:-1]) #从头到尾
-print(string[2:]) #从下标2开始到尾
-print(string[2:4])# 从下标2到n-1  [m,n)
-print(string*2)# 输出2次
+print(string[0:-1])  # 从头到尾
+print(string[2:])  # 从下标2开始到尾
+print(string[2:4])  # 从下标2到n-1  [m,n)
+print(string*2)  # 输出2次
 
 
 #  list ###############################################
-#元素可变的
+# 元素可变的
 listDemo = ["aa", 1, "bb", 2]
 print(listDemo)
-print(listDemo[0]) #输出下标0
-print(listDemo[2:]) #从下标2开始到尾
-print(listDemo[1:3]) #从下标2到n-1  [m,n)
-print(listDemo*2) #输出2次
+print(listDemo[0])  # 输出下标0
+print(listDemo[2:])  # 从下标2开始到尾
+print(listDemo[1:3])  # 从下标2到n-1  [m,n)
+print(listDemo*2)  # 输出2次
 listDemo[0] = "替换的"
-print(listDemo)#修改后的
+print(listDemo)  # 修改后的
+
+
 # 此方法不返回任何值，但从列表中反转给定对象。string,tuple no reverse()
 def variablenumbers():
     lis = [x for x in range(101)]
