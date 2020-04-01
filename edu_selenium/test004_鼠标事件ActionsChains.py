@@ -1,7 +1,7 @@
 # 鼠标事件ActionsChains
 # 引入 ActionChains 类
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium import  webdriver
+from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 # 定位到要右击的元素
