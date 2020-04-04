@@ -65,14 +65,21 @@ if __name__ == '__main__':
     # unittest.main(verbosity=2)
 
 
-#8.2执行测试用例方案二如下：
-#8.2.1先构造测试集
-#8.2.1.1实例化测试套件
+# 8.2执行测试用例方案二如下：
+# 8.2.1先构造测试集
+# 8.2.1.1实例化测试套件 ，
+# pycharm 默认会用执行unittest.main()所以放在if __name__=='__main__'中会全部执行此方法无效，可以在一个新模块中调用
+
     suite = unittest.TestSuite()
-#8.2.1.2将测试用例加载到测试套件中。
-#执行顺序是安装加载顺序：先执行test_case2，再执行test_case1,Test('test_case2')=类名（方法名）
+    suite = unittest.TestLoader().loadTestsFromName()
+# 8.2.1.2将测试用例加载到测试套件中。
+# 执行顺序是安装加载顺序：先执行test_case2，再执行test_case1,Test('test_case2')=类名（方法名）
     suite.addTest(Test('test_case2'))
     suite.addTest(Test('test_case1'))
+
+
+
+
 #8.2.2执行测试用例
 #8.2.2.1实例化TextTestRunner类
     runner=unittest.TextTestRunner()
