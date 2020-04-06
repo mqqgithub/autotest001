@@ -12,4 +12,5 @@ def test_02(start, open_baidu):
     assert start == "yoyo"
 
 if __name__ == "__main__":
-    pytest.main(["-s", "aaa.py"])
+    # pytest.main(["-s", "aaa.py"])
+    pytest.main(['--html=report/test.html'])

@@ -36,5 +36,5 @@ if __name__ == '__main__':
 2、指定线程要执行的函数target=func
 3、把线程加到线程组中append（）
 4、设置守护线程setDaemon（），等到子线程都结束，主线程才结束
-
+https://www.cnblogs.com/JackLi07/p/9232005.html
 '''
