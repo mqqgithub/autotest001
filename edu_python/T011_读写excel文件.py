@@ -116,7 +116,7 @@ data={
 'sex':['男','女','男']
 }
 df= DataFrame(data)
-df.to_excel('new.xlsx')
+df.to_excel('new.xlsx', sheet_name="Sheet1")
 
 
 

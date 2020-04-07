@@ -6,20 +6,18 @@
 
 不管是哪种类型的文件，只要记住一点：文件以什么编码保存的，就以什么编码方式打开.
 
-如果不在python文件指定头信息＃-*-coding:utf-8-*-,
-那就使用默认的python2中默认使用ascii，
+如果不在python文件指定头信息＃-*-coding:utf-8-*-,那就使用默认的python2中默认使用ascii，
 python3中默认使用unicode
-
 浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器
 如果服务端encode的编码格式是utf-8， 客户端内存中收到的也是utf-8编码的二进制
 
 Unicode是数据解码后的结果，所以如果数据已经是Unicode格式，则只能使用encode，如果是其他格式只能使用decode
 encode后ascii中的还是按照原来的编码，其他转为byte类型
-#1.win系统默认是gbk编码的，所以桌面生成的TXT之类的都是gbk编码的。
+#1.中文win系统默认是gbk编码的，所以桌面生成的TXT之类的都是gbk编码的。
 #2.出现乱码正常都是原文件的编码方式和打开指定的编码不一致所致
 '''
 print(id("hello"))
-x = 'hello' # x在内存是unicode 编码
+x = 'hello'  # x在内存是unicode 编码
 print(id(x))
 
 y = 'hello'.encode('utf-8') # y在内存是utf-8编码
@@ -28,7 +26,7 @@ print(id(y))
 print('#################################')
 # 分别验证在pycharm中和cmd中下述的打印结果
 s = u'林' # 当程序执行时，'林'会被以unicode形式保存新的内存空间中
-print('__'+repr(s))
+print('__'+repr(s))   # repr(s)返回字符串
 # s指向的是unicode，因而可以编码成任意格式，都不会报encode错误
 s1 = s.encode('utf-8')
 s2 = s.encode('gbk')

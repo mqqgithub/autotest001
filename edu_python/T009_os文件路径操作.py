@@ -23,3 +23,5 @@ print(os.path.abspath(__file__))
 # 当前文件的上一路径
 print(os.path.dirname(os.path.abspath(__file__)))
 print(os.path.split(os.path.abspath(__file__))[0])
+print(os.path.split(os.path.abspath(__file__))[1])
+# os.path.split() 分离文件和文件夹

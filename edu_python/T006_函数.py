@@ -4,11 +4,13 @@
 # 函数传参的问题
 def sum1(x, y):
     print(x + y)
+
 def sum2(*args):
     su = 0
     for i in range(len(args)):
         su += args[i]
     print(su)
+
 def sum3(**kvargs):
     for i in kvargs:
         print(kvargs[i])

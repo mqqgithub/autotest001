@@ -23,8 +23,8 @@ class Sons(Father):
 # 如果重写了__init__ 时，要继承父类的构造方法，可以使用 super 关键字：
 class Sonss(Father):
     def __init__(self, name):
-        super(Sonss, self).__init__(name)
-        # Father.__init__(self, name)
+        # super(Sonss, self).__init__(name)
+        Father.__init__(self, name)
         print("hi")
         self.name =  name
     def getName(self):
