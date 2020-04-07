@@ -52,8 +52,8 @@ def variablenumbers():
     lis = [x for x in range(101)]
     lis.reverse()
     lis2 = lis[0:-1:8]
-    print(lis2)
-
+    print('====', lis2)
+variablenumbers()
 listDemo = ["one","two","three","four","five"]
 listDemo.insert(0, "insert")
 listDemo[0] = "update"
@@ -98,7 +98,7 @@ print("len(tup1) ", len(tup1))
 
 # Set(集合) ###############################
 # 一个无序不可重复的序列
-setDemo = {"a", "b", "c"}
+setDemo = {"a", "b", 1}
 print("集合A ", setDemo)
 # 集合可以做 交集并集差集
 setDemo2 = {"a", "b"}
