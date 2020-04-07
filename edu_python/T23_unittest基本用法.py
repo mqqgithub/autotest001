@@ -1,4 +1,4 @@
-# 功能描述：
+# 功能描述：https://www.jianshu.com/p/3aad32ed83bf?from=timeline
 # 开发人员：
 # 开发时间：
 # 参数说明;
@@ -73,6 +73,7 @@ if __name__ == '__main__':
 #执行顺序是安装加载顺序：先执行test_case2，再执行test_case1,Test('test_case2')=类名（方法名）
     suite.addTest(Test('test_case2'))
     suite.addTest(Test('test_case1'))
+    suite.a
 #8.2.2执行测试用例
 #8.2.2.1实例化TextTestRunner类
     runner=unittest.TextTestRunner()

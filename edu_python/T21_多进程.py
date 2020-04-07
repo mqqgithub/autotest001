@@ -47,7 +47,7 @@ if __name__ == "__main__":
     p.join()
     print("所有子进程结束")
 """
-"""queue队列，创建一个子进程向队列中写消息，另一个进程对消息, 队列中的数据是共享的"""
+"""queue队列，创建一个子进程向队列中写消息，另一个进程读消息, 队列中的数据是共享的"""
 from multiprocessing import Process
 from multiprocessing import Queue
 import time
@@ -56,7 +56,7 @@ import time
 def write_task(queue):
     print("队列中写消息")
     if not queue.full():
-        for i in range(500):
+        for i in range(5):
             msg = "mews" + str(i)
             queue.put(msg)
             print("写入消息%s" % msg)
@@ -64,7 +64,7 @@ def write_task(queue):
 def read_task(queue):
     print("队列中读消息")
     if not queue.empty():
-        for i in range(500):
+        for i in range(5):
             news = queue.get(True,2)
             print("读取 %s" % news)
 
