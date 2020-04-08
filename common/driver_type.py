@@ -35,4 +35,4 @@ class DriverType(object):
 
 if __name__ == "__main__":
     driver = DriverType().get_url(url="统一登录")
-    driver.close()
+    driver.quit()

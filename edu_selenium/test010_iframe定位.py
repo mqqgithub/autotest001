@@ -4,7 +4,7 @@ iframe  frame  对象定位
 定位 B 中的内容则需要先到 A，然后再到 B。
 switch_to_frame 方法可以把当前定位的主体切换了 frame 里。怎么理解这句话呢？我们可以从 frame
 的实质去理解。frame 中实际上是嵌入了另一个页面，而 webdriver 每次只能在一个页面识别，因此才需要
-用 switch_to.frame 方法去获取 frame 中嵌入的页面，对那个页面里的元素进行定位。
+用 switch_to.frame（） 方法去获取 frame 中嵌入的页面，对那个页面里的元素进行定位。
 '''
 
 

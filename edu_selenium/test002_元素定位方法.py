@@ -75,3 +75,7 @@ driver.find_element_by_id("kw").send_keys("1")
 driver.find_element_by_id("su").click()
 driver.find_element_by_id("su").submit()
 # submit()要求提交对象是一个表单，更强调对信息的提交。click()更强调事件的独立性。（比如，一个文字链接就不能用 submit()方法。）
+
+'''
+https://www.cnblogs.com/constantince/p/4565261.html  chrome浏览器开发这使用指南
+'''

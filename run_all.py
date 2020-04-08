@@ -24,3 +24,9 @@ def run():
 if __name__ == '__main__':
     run()
 
+'''
+报告打印的几种方式
+BeautifulReport(discover).report("")
+HTMLReportRunner("").run(discover)
+HTMLReport.TestRunner("").run(discover)
+'''
