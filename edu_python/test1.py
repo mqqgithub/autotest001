@@ -11,11 +11,9 @@ def get_driver(host):
              'http://192.168.170.78:5555/wd/hub': 'chrome',
              'http://192.168.170.78:6666/wd/hub': 'chrome'
              }
-    ip1 = "http://192.168.170.78:4444/wd/hub"
-    ip2 = ""
-    if host == 1:
-        driver = webdriver.Remote(command_executor=ip1, desired_capabilities="chrome")
-    return driver
+    host = "http://192.168.170.78:4444/wd/hub"
+    driver = webdriver.Remote(command_executor=host, desired_capabilities="chrome")
+
 
 def set_func(func):
     num = [0]   # 闭包中外函数中的变量指向的引用不可变

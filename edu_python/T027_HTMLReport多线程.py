@@ -7,7 +7,7 @@ import os, time, sys
 # 测试用例文件路径
 # test_dir = os.path.join(os.getcwd(), 'edu_python')
 test_dir = "./"  # 当前文件夹
-discover = unittest.defaultTestLoader.e(test_dir, pattern='T000*.py')
+discover = unittest.defaultTestLoader.discover(test_dir, pattern='T000*.py')
 print('discover', discover)
 
 # 测试报告文件路径

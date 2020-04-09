@@ -8,7 +8,8 @@ class Test(unittest.TestCase):
         print("test start...>")
         self.x = 5
         self.y = 2
-        self.dr = webdriver.Chrome()
+        self.host = "http://192.168.170.78:4444/wd/hub"
+        self.dr = webdriver.Remote(command_executor=self.host, desired_capabilities="chrome")
         time.sleep(3)
 
     def tearDown(self):
