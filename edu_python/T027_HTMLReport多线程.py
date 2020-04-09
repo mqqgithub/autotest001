@@ -14,7 +14,7 @@ print('discover', discover)
 # 文件地址必须是同级或者是下一级
 report_path = r'D:\autotest001\report'
 report_time = time.strftime("%Y_%m_%d_%H_%M_%S_")
-report_name = report_time + "report.html"
+report_name = report_time + "report"
 
 
 def run():

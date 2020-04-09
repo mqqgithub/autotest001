@@ -2,14 +2,19 @@ import unittest
 from selenium import webdriver
 import time
 
-
+chrome_capabilities = {
+            'platform': 'ANY',
+            'browserName': 'chrome',
+            'version': '',
+            'javascriptEnabled': True
+        }
 class Test(unittest.TestCase):
     def setUp(self):
         print("test start...>")
         self.x = 5
         self.y = 2
-        self.host = "http://192.168.170.78:4444/wd/hub"
-        self.dr = webdriver.Remote(command_executor=self.host, desired_capabilities="chrome")
+        self.host = "http://192.168.2.128:4444/wd/hub"
+        self.dr = webdriver.Remote(command_executor=self.host, desired_capabilities=chrome_capabilities)
         time.sleep(3)
 
     def tearDown(self):
