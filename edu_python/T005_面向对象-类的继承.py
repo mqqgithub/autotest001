@@ -26,7 +26,7 @@ class Sonss(Father):
         # super(Sonss, self).__init__(name)
         Father.__init__(self, name)
         print("hi")
-        self.name =  name
+        self.name = name
     def getName(self):
         return 'Sonss  '+self.name
 
