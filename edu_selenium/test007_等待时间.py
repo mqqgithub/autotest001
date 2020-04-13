@@ -1,4 +1,4 @@
-# 等待时间
+# 等待时间 https://www.jianshu.com/p/01940c63160c
 
 # 导入 WebDriverWait 包
 from selenium.webdriver.support.ui import WebDriverWait
