@@ -267,8 +267,8 @@ class BasePage(object):
             else:
                 log.info('切换到为 handles 的窗口')
                 self.driver.swich_to.window(name)
-        except:
-            log.exception('切换窗口失败!!!')
+        except Exception as e:
+            log.info('切换窗口失败!!!', e)
             # 截图
             self.save_img(img_name)
 
