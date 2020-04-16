@@ -273,7 +273,7 @@ class BasePage(object):
             self.save_img(img_name)
 
     # 执行js脚本
-    def execute(self, js, *args):
+    def execute_js(self, js, *args):
         log.info('执行js脚本')
         try:
             self.driver.execute_script(js, *args)
