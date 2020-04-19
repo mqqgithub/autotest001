@@ -40,3 +40,5 @@ print(repr(s2)) # '\xc1\xd6' 编码一个汉字gbk用2Bytes
 print(type(s)) # <type 'unicode'>
 print(type(s1)) # <type 'str'>
 print(type(s2)) # <type 'str'>
+
+# repr() 函数将对象转化为供解释器读取的形式

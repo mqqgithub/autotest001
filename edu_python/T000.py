@@ -9,6 +9,7 @@ chrome_capabilities = {
             'javascriptEnabled': True
         }
 
+
 class Test(unittest.TestCase):
     def setUp(self):
         print("test start...>")
@@ -44,7 +45,6 @@ class Test(unittest.TestCase):
 
     def test_06(self):
         self.dr.get("https://www.baidu.com")
-
 
 
 if __name__ == "__main__":

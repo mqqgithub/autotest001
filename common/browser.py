@@ -1,7 +1,7 @@
 import time
 import os
 from selenium import webdriver
-
+# 废弃
 
 class Browser(object):
     def __init__(self, browser_type='chrome'):

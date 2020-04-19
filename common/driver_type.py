@@ -5,9 +5,25 @@ class DriverType(object):
 
     chrome_driver_path = "C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe"
     browser = 'chrome'
+    host = ["http://127.0.0.1:4444/wd/hub", "http://127.0.0.1:5555/wd/hub", "http://127.0.0.1:6666/wd/hub"]
     URL = {"统一登录": "https://zui.kjtpay.com/window/index#",
            "百度": "https://www.baidu.com"}
 
+    '''
+    # 远程分布式执行  host执行为主机地址，grid自动分发
+    def __init__(self, browser_type=browser):
+        self.capabilities = {
+            'platform': 'ANY',
+            'browserName': browser_type,
+            'version': '',
+            'javascriptEnabled': True
+        }
+        self._type = browser_type.lower()
+        if self._type == "chrome":
+            self.dr = webdriver.remote(command_executor=DriverType.host[0], desired_capabilities=self.capabilities)
+    '''
+
+    # 本地线性批量执行
     def __init__(self, browser_type=browser):
         self._type = browser_type.lower()
         if self._type == "firefox":

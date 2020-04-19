@@ -54,7 +54,7 @@ def variablenumbers():
     lis2 = lis[0:-1:8]
     print('====', lis2)
 variablenumbers()
-listDemo = ["one","two","three","four","five"]
+listDemo = ["one", "two", "three", "four", "five"]
 listDemo.insert(0, "insert")
 listDemo[0] = "update"
 del listDemo[0]
@@ -133,4 +133,8 @@ int(x)
 str(x)
 tuple(s) 将序列转换成元组
 list(s) 将序列转换成列表
+
+可变类型（mutable）：列表，字典
+不可变类型（unmutable）：数字，字符串，元组
+这里的可变不可变，是指内存中的那块内容（value）是否可以被改变
 '''

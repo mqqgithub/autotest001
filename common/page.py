@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from common.browser import Browser
-
+# 废弃
 
 # 浏览器页面类，主要进行浏览器页面的控制，包括获取
 class Page(Browser):
