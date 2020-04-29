@@ -1,10 +1,13 @@
 #浏览器的相关操作
 from selenium import webdriver
+
+'''需要能找到驱动的位置，也可以在环境变量中'''
 # driver = webdriver.Chrome("D:\\TOOLS\jenkins\\browser_driver\\chromedriver.exe")
-driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
-# driver = webdriver.Chrome()
+# driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
+driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 driver.maximize_window()
+# driver.minimize_window()
 # driver.set_window_size(1000, 800)
 driver.get("https://www.w3cschool.cn/")
 driver.back()
