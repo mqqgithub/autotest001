@@ -24,6 +24,8 @@ class Test(unittest.TestCase):
     # 5.定义setUp()方法用于测试用例执行前的初始化工作。
     # 注意，所有类中方法的入参为self，定义方法的变量也要“self.变量”
     # 注意，输入的值为字符型的需要转为int型
+    # @classmethod只执行一次
+    @classmethod
     def setUp(self):
         print("test start!")
         self.number = 10
@@ -96,3 +98,15 @@ if __name__ == '__main__':
 #8.3.2.2使用run()方法运行测试套件（即运行测试套件中的所有用例）
     runner.run(discover)   
 '''
+'''
+测试固件可以分离出来
+'''
+from selenium import webdriver
+
+
+class Test_Fixture(unittest):
+    def set_up(self):
+        self.driver = webdriver.Chrome()
+        self.driver.get("http://www.baidu.com")
+    def tear_down(self):
+        self.driver.quit()

@@ -18,4 +18,11 @@ print(tp)
 '''返回元素的结果是否可见，返回结果为 True 或 False'''
 result = driver.find_element_by_id("kw").is_displayed()
 print(result)
+
+'''检查元素是否可用'''
+enable = driver.find_element_by_id("kw").is_enabled()
+print("可用？{}".format(enable))
+
+'''复选框、单选框是否需要选中'''
+# enable = driver.find_element_by_id("kw").is_selected()
 driver.quit()

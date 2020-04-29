@@ -15,6 +15,14 @@ driver.get("https://www.w3cschool.cn/")
 '''浏览器向前、向后'''
 driver.back()
 driver.forward()
+
+'''刷新'''
+driver.refresh()
+
+'''浏览器的名字'''
+n = driver.name
+print(n)
+
 '''退出'''
 driver.quit()
 # driver.close()
