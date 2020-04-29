@@ -12,11 +12,22 @@ import os
 driver = webdriver.Firefox()
 file_path = 'file:///' + os.path.abspath('level_locate.html')
 driver.get(file_path)
+
 # 点击 Link1 链接（弹出下拉列表）
 driver.find_element_by_link_text('Link1').click()
+
 # 在父亲元件下找到 link 为 Action 的子元素
 menu = driver.find_element_by_id('dropdown1').find_element_by_link_text('Anotheraction')
 # 鼠标移动到子元素上 ，perform()执行所有 ActionChains 中存储的行为
 ActionChains(driver).move_to_element(menu).perform()
 time.sleep(5)
 driver.quit()
+
+'''
+前一个兄弟节点
+//input[@name="sne.sysLnNumAdmin.category2"]/preceding-sibling::input
+后一个兄弟节点
+//div[text()="加密内容不能为空！"]/following-sibling::div//span[text()="确定"]
+父节点定位
+//span[text()="山东省"]/parent::a/preceding-sibling::span
+'''

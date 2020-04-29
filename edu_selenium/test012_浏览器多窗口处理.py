@@ -21,13 +21,14 @@ for handle in allhandles:
 driver.find_element_by_id("mailRegTab").click()
 time.sleep(5)
 driver.close()
+
 # 回到原先的窗口
 driver.switch_to.window(nowhandle)
 driver.find_element_by_id("kw").send_keys(u"注册成功！")
 time.sleep(3)
 driver.quit()
 
-# 法二：
+'''法二：使用下表'''
 h = driver.current_window_handle
 allhandles = driver.window_handles
 driver.switch_to.window(allhandles[1])

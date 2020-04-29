@@ -21,9 +21,9 @@ driver.find_element_by_link_text("搜索设置").click()
 # --------------------------
 #time.sleep(2)
 s = driver.find_element_by_id("nr")
+'''通过索引'''
 #Select(s).select_by_index(0)
-# --------------------------
-#time.sleep(2)
+''''''
 #Select(s).select_by_value("20")
 # --------------------------
 time.sleep(2)
