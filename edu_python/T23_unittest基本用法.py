@@ -105,8 +105,10 @@ from selenium import webdriver
 
 
 class Test_Fixture(unittest):
-    def set_up(self):
+
+    def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get("http://www.baidu.com")
-    def tear_down(self):
+
+    def tearDown(self):
         self.driver.quit()
