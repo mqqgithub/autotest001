@@ -5,3 +5,6 @@ server。
 webriver wire protocol）
 3. Remote server 需要依赖原生的浏览器组件（如：IEDriverServer.exe、chromedriver.exe），来转
 化转化浏览器的 native 调用。'''
+
+# https://www.cnblogs.com/uncleyong/p/11898297.html
+
