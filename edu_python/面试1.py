@@ -120,6 +120,7 @@ while b < 100:
     print(b, end=',')
     a, b = b, a+b
 print('\n')
+
 '''  幂的递归  计算 x 的 n 次方，如：3 的 4 次方 为 3*3*3*3=81 '''
 def yyy(x, n):
     if n == 0:
