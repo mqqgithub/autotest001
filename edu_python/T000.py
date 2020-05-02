@@ -1,6 +1,8 @@
 import unittest
 from selenium import webdriver
 import time
+import logging
+
 
 chrome_capabilities = {
             'platform': 'ANY',
@@ -41,6 +43,8 @@ class Test(unittest.TestCase):
         self.assertEqual(z, 25, msg="乘方")
 
     def test_05(self):
+        logging.debug("++++++debug")
+        logging.info("+++++info")
         self.dr.get("https://www.baidu.com")
 
     def test_06(self):

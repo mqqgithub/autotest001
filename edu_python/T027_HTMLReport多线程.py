@@ -20,7 +20,7 @@ report_name = report_time + "report"
 def run():
     runner = HTMLReport.TestRunner(title="测试报告", description='测试deafult报告', output_path=report_path,
                                    report_file_name=report_name, thread_count=6)
-    runner.run(discover)
+    runner.run(discover, debug=True)
 
 
 if __name__ == '__main__':
