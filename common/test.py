@@ -1,4 +1,7 @@
-#coding=utf-8
-x = '商户'
-print(x)
-print(x.encode('utf-8'))
+count = 1
+def search():
+    global count
+    count = 2
+    print(count)
+search()
+print(count)
