@@ -1,7 +1,4 @@
-count = 1
-def search():
-    global count
-    count = 2
-    print(count)
-search()
-print(count)
+a = 1
+def test():
+    a= 2
+    
