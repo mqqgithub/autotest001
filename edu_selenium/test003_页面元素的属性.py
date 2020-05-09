@@ -6,7 +6,7 @@ size = driver.find_element_by_id("su").size
 print(size)
 
 text = driver.find_element_by_id("su").text
-print(text)
+print('text=', text)
 
 value = driver.find_element_by_id("su").get_attribute('value')
 print(value)

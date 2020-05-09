@@ -17,6 +17,7 @@ driver.get(file_path)
 driver.implicitly_wait(30)
 
 # 先找到到 ifrome1（id = f1）
+# driver.switch_to.frame(0)  使用索引
 driver.switch_to.frame("f1")
 
 # 再找到其下面的 ifrome2(id =f2)

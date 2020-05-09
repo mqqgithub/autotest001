@@ -39,3 +39,14 @@ def test3(**kwargs):
 
 test3(x=1, y=2, z=3)
 test3(**{'x': 1, 'y': 2, 'z': 3})
+
+'''参数如果是可变类型的，怎么函数执行多次，可变类型的参数值会累加'''
+def func(a, l=[]):
+    l.append(a)
+    print(l)
+    return l
+
+
+func(5,)
+func(5, [])  # 给l赋值为[]，和没有赋值默认的分别存储
+func(6,)

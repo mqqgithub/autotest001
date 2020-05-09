@@ -1,6 +1,8 @@
 import unittest
 from selenium import webdriver
 import time
+import logging
+
 
 chrome_capabilities = {
             'platform': 'ANY',
@@ -15,8 +17,8 @@ class Test(unittest.TestCase):
         print("test start...>")
         self.x = 5
         self.y = 2
-        # self.host = "http://192.168.2.128:4444/wd/hub"
-        self.host = "http://192.168.170.78:4444/wd/hub"
+        self.host = "http://192.168.2.128:4444/wd/hub"
+        # self.host = "http://192.168.170.78:4444/wd/hub"
         self.dr = webdriver.Remote(command_executor=self.host, desired_capabilities=chrome_capabilities)
         time.sleep(3)
 
@@ -41,6 +43,8 @@ class Test(unittest.TestCase):
         self.assertEqual(z, 25, msg="乘方")
 
     def test_05(self):
+        logging.debug("++++++debug")
+        logging.info("+++++info")
         self.dr.get("https://www.baidu.com")
 
     def test_06(self):
