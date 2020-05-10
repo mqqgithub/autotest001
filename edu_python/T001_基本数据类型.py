@@ -31,7 +31,7 @@ print(string)
 print(string[0])
 print(string[0:-1])  # 从头到尾
 print(string[2:])  # 从下标2开始到尾
-print(string[2:4])  # 从下标2到n-1  [m,n)
+print(string[0:4:1])  # 从下标2到n-1  [m,n)
 print(string*2)  # 输出2次
 
 

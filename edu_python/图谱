@@ -1,0 +1,51 @@
+一、基本数据类型
+
+
+二、循环
+
+
+三、函数
+1、def定义
+2、def func(*args, **kwargs) 聚合 、打散
+3、函数参数顺序 args-》*args-》args=1-》**kwargs
+4、内部空间、全局变量、局部变量  globals() locals() global nonlocal
+5、函数名（）、函数名作为参数
+6、高阶函数，函数中嵌套函数
+7、可迭代对象__iter__()、迭代器__iter__()\__next__()、for循环内部转化为迭代器、省内存、惰性每次只取一个
+8、生成器本质是迭代器、迭代器python实现、生成器需自己实现  return换成yield，
+   返回结果是一个生成器对象，用next（）执行，一个yield对应一个next
+    send('')传值 yield from 传多值
+9、列表推导式：
+   -循环式 l1 = [i for i in range(2,101,2)]
+   -筛选式 multiples = [i for i in range(30) if i % 3 is 0]
+10、生成器表达式  比列表省内存
+    gen = (i**2 for i in range(10))
+    print(gen)
+    # 结果: <generator object <genexpr> at 0x0000026046CAEBF8>
+    # 获取1-100内能被3整除的数
+    gen = (i for i in range(1,100) if i % 3 == 0)
+    for num in gen:
+11、字典推导式
+    lst1 = ['jay','jj','meet']
+    lst2 = ['周杰伦','林俊杰','郭宝元']
+    dic = {lst1[i]:lst2[i] for i in range(len(lst1))}
+    print(dic)
+12、字典推导式
+    lst1 = ['jay','jj','meet']
+    lst2 = ['周杰伦','林俊杰','郭宝元']
+    dic = {lst1[i]:lst2[i] for i in range(len(lst1))}
+    print(dic)
+13、集合推导式
+    lst = [1,2,3,-1,-3,-7,9]
+    s = {abs(i) for i in lst}
+    print(s)
+14、内置函数
+    all()  any()  bytes() callable() chr() complex() divmod() eval() exec() format() frozenset()
+    globals() hash() help() id() input() int()  iter() locals() next()  oct()  ord()  pow()
+    repr()  round()
+
+    abs() enumerate() filter()  map() max()  min() open()  range() print()  len()  list()  dict() str()
+    float() reversed()  set()  sorted()  sum()    tuple()  type()  zip()  dir()
+
+    classmethod()  delattr() getattr() hasattr()  issubclass()  isinstance()  object() property()
+    setattr()  staticmethod()  super()
