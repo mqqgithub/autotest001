@@ -1,16 +1,16 @@
-def func():
-    print("111")
-    yield 222
-    print("333")
-    yield 444
+from edu_python.T001 import Test001
 
-gener = func()
 
-ret = gener.__next__()
-print(ret)
+class Test(Test001):
+    def __init__(self, x):
+        super().__init__(x)
+        print('init我是引用者', x)
 
-ret2 = gener.__next__()
-print(ret2)
-ret3 = gener.__next__()
-# 最后⼀个yield执⾏完毕. 再次__next__()程序报错
-print(ret3)
+    def test(self):
+        t1 = Test001(1)
+        print('t1', t1)
+
+
+if __name__ == "__main__":
+    t = Test('ooooo')
+    t.test()

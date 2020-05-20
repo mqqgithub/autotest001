@@ -1,21 +1,21 @@
 # https://www.cnblogs.com/jassin-du/p/7921296.html
 """
 from multiprocessing import Process
-import os
+import os, time
 
 
 def add(name):
     print("child process %s,%s" % (name, os.getpid()))
-
+    time.sleep(2)
 
 if __name__ == "__main__":
     print("parent process %s" % (os.getpid()))
     print("创建进程实例-子进程")
     # args是一个元祖，传参数值给add
     p = Process(target=add, args=('test1',))
-    print("子进程启动")
+    print("子进程启动,start自动调用run")
     p.start()
-    print("join子进程执行，等待这个进程结束，主进程才结束，通常用于进程间的同步")
+    print("等待这个进程p结束，主进程_main才结束，通常用于进程间的同步只能作用于start而不能用于run")
     p.join()
     # 获取当前进程的名字
     # multiprocessing.current_process()
@@ -23,7 +23,8 @@ if __name__ == "__main__":
     # p.is_alive()
     # 不管这个是否在运行，强制杀掉
     # p.terminate()
-    # 默认值False，主进程
+    # 默认值为False，如果设为True，代表p为后台运行的守护进程，当p的父进程终止时，
+    # p也随之终止,必须在p.start()之前设置
     # p.daemon = True
 """
 """进程池:进程之间不能通行，数据不能共享
