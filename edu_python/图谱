@@ -1,9 +1,10 @@
 一、基本数据类型
-
-
+    int
+    string
+    元祖
 二、循环
-
-
+    if
+    for
 三、函数
 1、def定义
 2、def func(*args, **kwargs) 聚合 、打散
@@ -43,9 +44,40 @@
     all()  any()  bytes() callable() chr() complex() divmod() eval() exec() format() frozenset()
     globals() hash() help() id() input() int()  iter() locals() next()  oct()  ord()  pow()
     repr()  round()
-
+    ##
     abs() enumerate() filter()  map() max()  min() open()  range() print()  len()  list()  dict() str()
     float() reversed()  set()  sorted()  sum()    tuple()  type()  zip()  dir()
-
+    ##
     classmethod()  delattr() getattr() hasattr()  issubclass()  isinstance()  object() property()
     setattr()  staticmethod()  super()
+15、匿名函数：  函数名 = lambda 参数:返回值
+    func = lambda a,b,*args,sex= 'alex',c,**kwargs: kwargs
+    print(func(3, 4,c=666,name='alex'))  # {'name': 'alex'}
+    # 所有类型的形参都可以加，但是一般使用匿名函数只是加位置参数，其他的用不到
+16、闭包的定义：
+        1. 闭包是嵌套在函数中的函数。
+        2. 闭包必须是内层函数对外层函数的变量（非全局变量）的引用。
+    闭包的作用：
+        保存局部信息不被销毁，保证数据的安全性。
+    闭包的应用：
+        可以保存一些非全局变量但是不易被销毁、改变的数据。
+        装饰器。
+    def make_averager():
+        series = []
+        def averager(new_value):
+            series.append(new_value)
+            total = sum(series)
+            return total/len(series) ​
+    return averager
+    avg = make_averager()
+    print(avg(100000))
+    print(avg(110000))
+    print(avg(120000))
+17、装饰器
+    def wrapper(func):
+        def inner(*args,**kwargs):
+              '''执行被装饰函数之前的操作'''
+                  ret = func
+                  '''执行被装饰函数之后的操作'''
+                  return ret
+        return inner
