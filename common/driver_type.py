@@ -29,7 +29,7 @@ class DriverType(object):
         if self._type == "firefox":
             self.driver = webdriver.Firefox()
         if self._type == "chrome":
-            self.driver = webdriver.Chrome(DriverType.chrome_driver_path)
+            self.driver = webdriver.Chrome()
         if self._type == "ie":
             self.driver = webdriver.Ie()
 
@@ -43,12 +43,12 @@ class DriverType(object):
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)'''
     def get_url(self):
-        self.driver.get(self.URL["统一登录"])
+        self.driver.get(self.URL["百度"])
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
         return self.driver
 
 
 if __name__ == "__main__":
-    driver = DriverType().get_url(url="统一登录")
+    driver = DriverType().get_url()
     driver.quit()

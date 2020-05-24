@@ -47,7 +47,7 @@ listDemo[0] = "替换的"
 print(listDemo)  # 修改后的
 
 
-# 此方法不返回任何值，但从列表中反转给定对象。string,tuple no reverse()
+# 此方法不返回任何值，但从列表中反转给定对象。string,tuple 不可变对象不可使用 reverse()
 def variablenumbers():
     lis = [x for x in range(101)]
     lis.reverse()

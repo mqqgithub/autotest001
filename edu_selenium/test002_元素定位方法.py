@@ -18,14 +18,14 @@ driver.find_element_by_partial_link_text("新闻").click()
 driver.find_element_by_xpath("//input[@id='kw']").send_keys("python")
 driver.find_element_by_xpath("//*[@id='kw]").send_keys("python")
 driver.find_element_by_xpath("//div[@id='u1']/a[0]").send_keys("1")
-driver.find_element_by_xpath("//div[@id='hd' or @name=q']").send_keys("2")
+driver.find_element_by_xpath("//div[@id='hd' or @name='q']").send_keys("2")
 driver.find_element_by_xpath("//input[contains(@id,'kw')]").send_keys("python")
 '''用于知道超链接上显示的部分或全部 文本信息'''
 driver.find_element_by_xpath("//*[contains(text(),'新闻')]").click()
 '''用Text()，直接查找页面当中所有的退出二字，经常用于纯文字的查找'''
 driver.find_element_by_xpath('//*[text()="新闻"]').click()
 '''当标签里面含有其他标签+文字时   https://www.cnblogs.com/sschen/p/3612503.html'''
-driver.find_element_by_xpath("//*[contains(.'新闻')]").click()  # 不行，待研究
+driver.find_element_by_xpath("//*[contains(.,'新闻')]").click()  # 不行，待研究
 
 '''css  单一属性的定位'''
 driver.find_element_by_css_selector("input")
@@ -98,8 +98,11 @@ By.xpath("//input[ends-with(@id,'很漂亮')
 By.xpath("//input[contains(@id,'那么美')]")
 前一个兄弟节点
 //input[@name="sne.sysLnNumAdmin.category2"]/preceding-sibling::input
+dr.find_element_by_xpath("//*[contains(text(),'hao123')]/preceding-sibling::a").click()
 后一个兄弟节点
 //div[text()="加密内容不能为空！"]/following-sibling::div//span[text()="确定"]
-父节点定位
+dr.find_element_by_xpath("//*[contains(text(),'hao123')]/following-sibling::a").click()
+父节点定位, 通过子节点，查找父节点
 //span[text()="山东省"]/parent::a/preceding-sibling::span
+dr.find_element_by_xpath("//*[contains(text(),'hao123')]/parent::div").get_attribute("id")
 '''

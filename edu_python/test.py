@@ -1,12 +1,16 @@
-import time
-def timer(func):  # func = index
-    def inner():
-        start_time = time.time()
-        func()
-        end_time = time.time()
-        print(f'此函数的执行效率为{end_time-start_time}')
-    return inner
+def func():
+    print("111")
+    yield 222
+    print("333")
+    yield 444
 
-index = timer(index)
+gener = func()
 
-f()
+ret = gener.__next__()
+print(ret)
+
+ret2 = gener.__next__()
+print(ret2)
+ret3 = gener.__next__()
+# 最后⼀个yield执⾏完毕. 再次__next__()程序报错
+print(ret3)
