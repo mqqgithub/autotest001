@@ -1,7 +1,7 @@
 import time
 from selenium import webdriver
 import unittest
-from BeautifulReport import BeautifulReport
+# from BeautifulReport import BeautifulReport
 
 from common.driver_type import DriverType
 from trademng_page.login_page import LoginPage

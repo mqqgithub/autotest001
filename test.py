@@ -1,42 +1,7 @@
-class A(object):
-    def __init__(self):
-        print('aaaaa')
-
-    def test(self):
-        print('from A')
-
-class B(A):
-    def __init__(self):
-        print('bbbbb')
-
-    def test(self):
-        print('from B')
-
-class C(A):
-    #def __init__(self):
-        #print('ccccc')
-
-    def test(self):
-        print('from C')
-
-class D(B):
-    def __init__(self):
-        print('ddddd')
-
-    def test(self):
-        print('from D')
-
-class E(C):
-    def __init__(self, i):
-        print('eeeee',i)
-
-    def test(self):
-        print('from E')
+from selenium import webdriver
+import logging
 
 
-class F(E, D):
-    # def test(self):
-    #     print('from F')
-    pass
-
-f1 = F(1)
+logging.basicConfig(level=logging.DEBUG)  # 打印源码中的日志
+dr = webdriver.Chrome() # 打开浏览器
+dr.get("https://www.cnblogs.com/linuxchao/") # 访问我的博客首页

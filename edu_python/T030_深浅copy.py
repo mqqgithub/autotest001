@@ -24,3 +24,8 @@ print("d=",d,"    id(d)=",id(d),"id(d[5])=",id(d[5]))
 
 # 浅copy，列表重新开辟内存地址，列表中的值还是原来的不变
 # 深copy，列表重新开辟内存地址，列表中不可变对象地址还是用原来的，可变对象重新开辟内存地址
+print('*'*90)
+a = [1, 2]
+b = copy.copy(a)
+c = copy.deepcopy(a)
+print(id(a), id(b), id(c))

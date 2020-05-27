@@ -1,3 +1,20 @@
+'''
+list.append()
+list()
+list.insert()
+list.extend()
+list.pop()
+list.remove()
+list.clear()
+del list[]  切片
+list.sort() 只打印，无返回值，改变了原来的值
+list.reverse()
+li = sort(list)  产生新的值
+li = reverse(list)
+'''
+
+
+
 '''  创建一个列表有三种方式  '''
 # 方式一：（常用）
 l1 = [1, 2, '太白']
@@ -27,6 +44,7 @@ print(l)  # [1, '太白', 2, 'a']
 print('extend  迭代着追加，在列表的最后面迭代着追加一组数据')
 l = [1, 2, 'a']
 l.extend('太白a')
+l.extend(['q', 'w', 'e'])
 print(l)
 
 '''  列表删除    '''
