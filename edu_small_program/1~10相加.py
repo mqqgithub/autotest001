@@ -30,7 +30,11 @@ for i in name:
         i_b = bin(i_bin)
         print(i_b)
 
-#res='{} {} {}'.format('egon',18,'male')
-res='{1} {0} {1}'.format('egon',18,'male')
-#res='{name} {age} {sex}'.format(sex='male',name='egon',age=18)
+# res='{} {} {}'.format('egon',18,'male')
+res = '{1} {0} {1}'.format('egon', 18, 'male')
+# res='{name} {age} {sex}'.format(sex='male',name='egon',age=18)
 print(res)
+
+# 列表推导式
+print(sum([1, 2, 3]))
+print(sum({i*2 for i in range(0, 11)}))

@@ -57,8 +57,9 @@ class Test(unittest.TestCase):
     # 注意，所有类中方法的入参为self，定义方法的变量也要“self.变量”
     # 注意，输入的值为字符型的需要转为int型
     def setUp(self):
-        self.number = input('Enter a number:')
-        self.number = int(self.number)
+        print('test start...')
+        # self.number = input('Enter a number:')
+        # self.number = int(self.number)
 
     # 6.定义测试用例，以“test_”开头命名的方法
     # 注意，方法的入参为self
@@ -66,12 +67,16 @@ class Test(unittest.TestCase):
     # 可定义多个测试用例
     # 最重要的就是该部分
     def test_case1(self):
-        print(self.number)
-        self.assertEqual(self.number, 10, msg='Your input is not 10')
+        # print(self.number)
+        # self.assertEqual(self.number, 10, msg='Your input is not 10')
+        self.assertIn('abc', 'abcdefg')
+        self.assertNotIn('abc', 'abcdefg')
 
     def test_case2(self):
-        print(self.number)
-        self.assertEqual(self.number, 20, msg='Your input is not 20')
+        # print(self.number)
+        # self.assertEqual(self.number, 20, msg='Your input is not 20')
+        self.assertEqual('a', 'a')
+        self.assertNotEqual('a', 'b')
 
     @unittest.skip('暂时跳过用例3的测试')
     def test_case3(self):

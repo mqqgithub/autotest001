@@ -16,7 +16,9 @@ def get_conf(para1, para2):
 
 if __name__ == "__main__":
     host1 = get_conf('host', 'host1')
+    user = get_conf('MysqlDB', 'user')
     print(host1)
+    print(user)
 
 
 

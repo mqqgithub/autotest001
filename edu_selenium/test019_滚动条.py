@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 #访问百度
-driver=webdriver.Firefox()
+driver=webdriver.Chrome()
 driver.get("http://www.baidu.com")
 #搜索
 driver.find_element_by_id("kw").send_keys("selenium")
@@ -11,7 +11,10 @@ time.sleep(3)
 js="var q=document.documentElement.scrollTop=10000"
 driver.execute_script(js)
 time.sleep(3)
-#将滚动条移动到页面的顶部
+
+js1 = 'var q = document.documentElement.scrollTop=50'
+driver.execute_script(js1)
+# 将滚动条移动到页面的顶部
 js_="var q=document.documentElement.scrollTop=0"
 driver.execute_script(js_)
 time.sleep(3)

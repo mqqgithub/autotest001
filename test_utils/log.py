@@ -60,3 +60,9 @@ if __name__ == "__main__":
     lo.info("---测试开始----")
     lo.info("输入密码")
     lo.warning("----测试结束----")
+
+#logging.debug(u"苍井空")
+#logging.info(u"麻生希")
+#logging.warning(u"小泽玛利亚")
+#logging.error(u"桃谷绘里香")
+#logging.critical(u"泷泽萝拉")

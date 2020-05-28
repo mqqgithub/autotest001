@@ -42,7 +42,7 @@ print(response_session.json())
 url = 'http://localhost:9515/session/'+response_session.json()['sessionId']+'/url'
 # 访问我的博客的请求参数
 value = {"url": "https://www.cnblogs.com/linuxchao/", "sessionId": response_session.json()['sessionId']}
-response_blog = requests.post(url = url,json = value)
+response_blog = requests.post(url=url, json=value)
 print(response_blog.json())
 
 
