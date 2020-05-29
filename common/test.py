@@ -1,6 +1,12 @@
+def fab(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b
+        a, b = b, a+b
+        n = n+1
 
-client_data='''GET /favicon.ico HTTP/1.1
-Host: 127.0.0.1:8002
-Connection: keep-alive'''
-request_path = client_data.split('\r\n')[0].split()[1]
-print(request_path)
+print(fab(6))
+f = fab(5)
+for i in f:
+    print(id(f))
+    print(i)

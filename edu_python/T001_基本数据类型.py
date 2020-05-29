@@ -109,7 +109,7 @@ print("AB的交集 ", setDemo & setDemo2)
 print("AB的不同时存在的 ", setDemo ^ setDemo2)
 
 
-#  字典 #####################################
+print('#  字典 #####################################')
 dictDemo = {"tom": "90", "jerry": "75"}
 print(dictDemo)
 print(dictDemo["tom"])

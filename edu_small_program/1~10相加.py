@@ -11,15 +11,20 @@ while i < 10:
 print(num)
 '''
 
-
+print('*'*22)
 def add(n):
     i = 0
     num = 0
-    while i < n:
+    while i <= n:
         num += i
+        print(num)
         i += 1
+        print(i)
     print(num)
-add(11)
+add(10)
+print('*'*22)
+
+print(sum({i for i in range(11)}))
 
 
 name = "吴彦祖"

@@ -26,8 +26,11 @@ a4 = "dkfjdkfasf54"
 
 # format的三种玩法 格式化输出
 res = '{} {} {}'.format('egon', 18,' male')
+print('res', res)
 res1 = '{1} {0} {1}'.format('egon', 18, 'male')
+print('res1', res1)
 res2 = '{name} {age} {sex}'.format(sex='male', name='egon', age=18)
+print('res2', res2)
 
 # strip
 name = '*barry**'

@@ -45,3 +45,6 @@ ret = obj.__next__()  # StopIteration
 print(ret)
 # 迭代器利用next取值：一个next取对应的一个值，如果迭代器里面的值取完了，还要next，
 # 那么就报StopIteration的错误。
+
+
+#

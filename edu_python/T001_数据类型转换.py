@@ -34,7 +34,7 @@ print(s1.split())  # ['alex', '太白', '武大']
 
 # list ---> str  # 前提 list 里面所有的元素必须是字符串类型才可以
 l1 = ['alex', '太白', '武大']
-print(' '.join(l1))  # 'alex 太白 武大'
+print(''.join(l1))  # 'alex 太白 武大'
 
 '''list set#########################'''
 # list ---> set

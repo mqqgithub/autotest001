@@ -77,7 +77,7 @@ print(dic)  # {'name': 'barry', 'age': 18}
 
 print('update')
 dic = {'name': '太白', 'age': 18}
-dic.update(sex='男', height=175)
+dic.update(sex='男', height=175, name='12')
 print(dic) # {'name': '太白', 'age': 18, 'sex': '男', 'height': 175}
 
 dic = {'name': '太白', 'age': 18}
