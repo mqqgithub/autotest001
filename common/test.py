@@ -1,12 +1,24 @@
-def fab(max):
-    n, a, b = 0, 0, 1
-    while n < max:
-        yield b
-        a, b = b, a+b
-        n = n+1
+def Singleton(cls):
+    _instance = {}
 
-print(fab(6))
-f = fab(5)
-for i in f:
-    print(id(f))
-    print(i)
+    def _singleton(*args, **kargs):
+        if cls not in _instance:
+            _instance[cls] = cls(*args, **kargs)
+        return _instance[cls]
+
+    return _singleton
+
+
+@Singleton
+class A(object):
+    a = 1
+
+    def __init__(self, x=0):
+        self.x = x
+        print(self.x)
+
+
+a1 = A(2)
+print(a1)
+a2 = A(3)
+print(a2)
