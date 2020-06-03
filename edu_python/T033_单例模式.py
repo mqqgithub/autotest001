@@ -32,4 +32,24 @@ class A(object):
 
 
 a1 = A(2)
+print(a1)
 a2 = A(3)
+print(a2)
+
+'''
+通过new实现单例
+'''
+class Single(object):
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = object.__new__(cls, *args, **kwargs)
+        return cls._instance
+
+a = Single()
+b = Single()
+print(a)
+print(b)
+
+
