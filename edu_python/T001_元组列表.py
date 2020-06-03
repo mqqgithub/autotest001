@@ -99,7 +99,7 @@ print(l)  # ['对', 'alex', '应', '女神']
 a = ["q", "w", "q", "r", "t", "y"]
 print('count', a.count("q"))
 
-a = ["q","w","r","t","y"]
+a = ["q","w","r","t","y",'r']
 print('index', a.index("r"))
 
 a = [2, 1, 3, 4, 5]
