@@ -71,7 +71,9 @@ js="document.getElementById('promote_start_date').removeAttribute('readonly')"
     # 填写促销日期（promote_start_date）为日期控件的id
     driver.find_element_by_id('promote_start_date').send_keys('1996-05-25') 
 '''
-
+'''
+js = "document.getElementsByTagName('button').click()"
+'''
 
 
 
