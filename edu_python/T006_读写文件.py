@@ -32,7 +32,6 @@ f.close()
 '''
 
 
-
 # readlines读取全部的行，返回的是list  每行末尾加\n换行
 
 f = open(r'D:/autotest001/test.py', 'r', encoding='utf-8')
