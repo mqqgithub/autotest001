@@ -1,14 +1,30 @@
 import os, re
-path1 = os.path.join(os.getcwd(), 'T000.py')
+path1 = os.path.join(os.getcwd(), '1.txt')
+path2 = os.path.join(os.getcwd(), '2.txt')
 # 文件时utf-8的的二进制文件，读取的时候需要带上编码格式
 # 也可以rb模式读取文件，读取的文件b开始的字符串，不需要带上编码格式
 # 读取的文件每行的结尾都带上\n
-# with open(path, 'r', encoding='utf-8') as f:
-#     lines = []
-#     for line in f:   # 每次读取一行，读完就释放空间，读取下一行
-#         lines.append(line)
-# print(lines)
 
+
+def read_line(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        for line in f:   # 每次读取一行，读完就释放空间，读取下一行
+            for s in re.split(r'[,]', line.strip()):
+                yield s
+s1 = read_line(path1)
+s2 = read_line(path2)
+for i in s1:
+    print(i,'++')
+    for j in s2:
+        print(j, '__')
+        if i == j:
+            print(i)
+# line1 = set([i for i in read_line(path1)])
+# print(line1)
+# line2 = set([i for i in read_line(path2)])
+# print(line2)
+# l =line1&line2
+# print(l)
 
 def read_size(path, size):
     with open(path, 'r', encoding='utf-8') as f:
