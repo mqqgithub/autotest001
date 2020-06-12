@@ -13,3 +13,4 @@ driver.find_element_by_name("password").send_keys("password")
 driver.find_element_by_id("TANGRAM__PSP_10__submit").click()
 driver.quit()
 # 本例中并没有用到新方法，唯一的技巧是用到了二次定位，这个技巧
+# 常见于一个小页面在另一个页面上，类似于弹窗，但是都在div中

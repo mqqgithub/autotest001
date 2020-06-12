@@ -1,7 +1,7 @@
 import time
 from selenium import webdriver
 import unittest
-# from BeautifulReport import BeautifulReport
+from BeautifulReport import BeautifulReport
 
 from common.driver_type import DriverType
 from trademng_page.login_page import LoginPage
@@ -56,6 +56,12 @@ class TestLogin(unittest.TestCase):
 
         self.p.login("maqingqing", "")
         self.assertEqual(self.p.passwordError(), u"请输入正确的密码")
+
+    def test_login_005(self):
+        """登录测试：登录用户名正确，密码正确"""
+        log.info("登录测试：登录用户名正确，密码正确")
+
+        self.p.login("maqingqing", "kjt@1212")
 
 
 if __name__ == "__main__":

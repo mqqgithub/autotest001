@@ -8,7 +8,7 @@ discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py')
 print('descover  ', discover)
 
 # 测试报告文件路径
-report_path = os.path.join(os.getcwd(), 'report_file')
+report_path = os.path.join(os.getcwd(), 'report')
 report_time = time.strftime("%Y_%m_%d_%H_%M_%S_")
 report_name = report_time + "report.html"
 # fp = open(report_name, 'wb')
