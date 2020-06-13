@@ -1,7 +1,7 @@
 import time
 
 import unittest
-# from BeautifulReport import BeautifulReport
+from BeautifulReport import BeautifulReport
 from trademng_page.login_page import LoginPage
 from trademng_page.union_query_page import UnionQuery
 from common.driver_type import DriverType

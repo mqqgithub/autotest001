@@ -1,4 +1,7 @@
 print("xxxxxxxxxxxxx")
+a = 1
+def test():
+    print(a)
 
 class Test001():
     def __init__(self, s):

@@ -1,6 +1,6 @@
 import logging,time,os
 # 这个是日志保存本地的路径
-log_path = "D:\\autotest001\\log_file"
+log_path = r"D:\py\autotest001\log_file"
 
 
 class Log:

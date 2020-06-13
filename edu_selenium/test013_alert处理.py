@@ -25,6 +25,7 @@ driver.quit()
 # 接受警告信息
 alert = driver.switch_to.alert()
 alert.accept()
+alert.dismiss()
 # 得到文本信息并打印
 alert = driver.switch_to.alert()
 print(alert.text())

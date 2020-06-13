@@ -43,7 +43,7 @@ class DriverType(object):
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)'''
     def get_url(self):
-        self.driver.get(self.URL["百度"])
+        self.driver.get(self.URL["统一登录"])
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
         return self.driver
