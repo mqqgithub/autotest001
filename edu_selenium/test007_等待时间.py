@@ -2,13 +2,17 @@
 
 # 导入 WebDriverWait 包
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import time
 from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
 '''显示等待WebDriverWait()方法使用'''
-element = WebDriverWait(driver, 10).until(lambda dr: driver.find_element_by_id("kw").is_displayed())
+# element = WebDriverWait(driver, 10).until(lambda dr: driver.find_element_by_id("kw"))
+# element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'kw')))
+element = WebDriverWait(driver, 10).until(EC.visibility_of(driver.find_element_by_id("kw")))
 element.send_keys("selenium")
 
 '''添加智能等待,隐式等待，遇到js问题可能就会一直等待'''

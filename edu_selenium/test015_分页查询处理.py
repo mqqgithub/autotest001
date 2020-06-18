@@ -14,7 +14,7 @@ total_pages = len(driver.find_element_by_tag_name("select").find_elements_by_tag
 print("total page is %s" %(total_pages))
 sleep(3)
 # 再次获取所分页，并执行循环翻页操作
-pages=driver.find_element_by_tag_name("select").find_elements_by_tag_name("option")
+pages = driver.find_element_by_tag_name("select").find_elements_by_tag_name("option")
 for page in pages:
     page.click()
     sleep(2)

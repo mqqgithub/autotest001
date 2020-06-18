@@ -21,6 +21,7 @@ driver.implicitly_wait(30)
 # driver.switch_to.frame('id') 使用ID
 # driver.switch_to.frame('name') 使用name
 # iframe = driver.find_element_by_id('id')
+# iframe = driver.find_element_by_xpath("//*[contains(@src, 'XXX')]")
 # driver.switch_to.frame("iframe") 先查询到iframe
 driver.switch_to.frame("f1")
 

@@ -84,7 +84,7 @@ https://www.cnblogs.com/constantince/p/4565261.html  chrome浏览器开发这使
 '''
 '''
 第一种方法：通过绝对路径做定位（相信大家不会使用这种方式）
-By.xpath("html/body/div/form/input")
+By.xpath("/html/body/div/form/input")
 第二种方法：相对路径
 By.xpath("//input")
 第三种方法：通过元素索引定位
@@ -93,7 +93,7 @@ By.xpath("//input[4]")
 By.xpath("//input[@id='kw1']")
 By.xpath("//input[@type='name' and @name='kw1']")
 第五种方法：使用部分属性值匹配（最强大的方法）
-By.xpath("//input[start-with(@id,'nice')
+By.xpath("//input[starts-with(@id,'nice')
 By.xpath("//input[ends-with(@id,'很漂亮')
 By.xpath("//input[contains(@id,'那么美')]")
 前一个兄弟节点

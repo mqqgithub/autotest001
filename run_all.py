@@ -5,7 +5,7 @@ from BeautifulReport import BeautifulReport
 # 测试用例文件路径
 test_dir = os.path.join(os.getcwd(), 'trademng_page_test')
 discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py')
-print('descover  ', discover)
+print('descover', discover)
 
 # 测试报告文件路径
 report_path = os.path.join(os.getcwd(), 'report')

@@ -13,6 +13,8 @@ login_status = {
     'username': None,
     'status': False,
 }
+
+
 def auth(x):
     def auth2(func):
         def inner(*args, **kwargs):
