@@ -9,5 +9,5 @@ print(num)
 
 n = 0
 for i in range(1, 101):
-    n = n+i
+    n += i
 print(n)

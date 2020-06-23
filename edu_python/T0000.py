@@ -13,7 +13,7 @@ class Test(unittest.TestCase):
         print("test start...>")
         self.x = 5
         self.y = 2
-        self.host = "http://192.168.2.128:4444/wd/hub"
+        self.host = "http://localhost:4444/wd/hub"
         # self.host = "http://192.168.170.78:4444/wd/hub"
         self.dr = webdriver.Remote(command_executor=self.host, desired_capabilities=chrome_capabilities)
         time.sleep(3)
