@@ -50,7 +50,7 @@ l = ['太白', 'alex', 'WuSir', '女神']
 ret = l.pop(1)
 print(ret, l)  # alex ['太白', 'WuSir', '女神']
 
-print('remove  通过元素删除列表中该元素')
+print('remove  通过元素值删除列表中该元素')
 l = ['太白', 'alex', 'WuSir', '女神']
 l.remove('alex')
 print(l) # ['太白', 'WuSir', '女神']
@@ -88,15 +88,15 @@ l[1:3] = 'abcdefg'
 print(l)  # ['太白', 'a', 'b', 'c', 'd', 'e', 'f', 'g', '女神']
 
 print('按照切片(步长)改值(必须一一对应)')
-l = ['太白', 'alex', 'WuSir', '女神']
-l[::2] = '对应'
+l = ['太白', 'alex', 'WuSir', '女神', '1', '2']
+l[::2] = '对应3'
 print(l)  # ['对', 'alex', '应', '女神']
 
 ''' count index     '''
 a = ["q", "w", "q", "r", "t", "y"]
 print('count', a.count("q"))
 
-a = ["q","w","r","t","y",'r']
+a = ["q", "w", "r", "t", "y", 'r']
 print('index', a.index("r"))
 
 a = [2, 1, 3, 4, 5]

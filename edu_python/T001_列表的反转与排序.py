@@ -3,7 +3,7 @@ l = [1, 2, 3, 5, 4]
 # 改变了原来的值
 # l.reverse()
 # 创建了一个新的对象
-# m = reversed(l)
+# m = list(reversed(l))
 # l.sort()
 # m = sorted(l)
 # 切片排序
