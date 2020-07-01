@@ -19,9 +19,8 @@ dic = {k: v for k, v in [('one', 1), ('two', 2), ('three', 3)]}
 print('dic', dic)
 
 print('fromkeys 字符串')
-dic = dict.fromkeys('abcd','太白')
+dic = dict.fromkeys('abcd', '太白')
 print(dic)  # {'a': '太白', 'b': '太白', 'c': '太白', 'd': '太白'}
-
 
 '''  字典的增  '''
 print('通过键值对直接增加')
@@ -65,7 +64,7 @@ print(dic)  # {}
 # 通过键删除键值对
 dic = {'name': '太白', 'age': 18}
 del dic['name']
-print(dic) # {'age': 18}
+print(dic)  # {'age': 18}
 # 删除整个字典
 del dic
 
@@ -78,10 +77,10 @@ print(dic)  # {'name': 'barry', 'age': 18}
 print('update')
 dic = {'name': '太白', 'age': 18}
 dic.update(sex='男', height=175, name='12')
-print(dic) # {'name': '太白', 'age': 18, 'sex': '男', 'height': 175}
+print(dic)  # {'name': '太白', 'age': 18, 'sex': '男', 'height': 175}
 
 dic = {'name': '太白', 'age': 18}
-dic.update([(1, 'a'),(2, 'b'),(3, 'c'),(4, 'd')])
+dic.update([(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')])
 print(dic)  # {'name': '太白', 'age': 18, 1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 
 dic1 = {"name": "jin", "age": 18, "sex": "male"}
@@ -94,17 +93,16 @@ print(dic2)  # {'name': 'alex', 'weight': 75}
 # 通过键查询
 # 直接dic[key](没有此键会报错)
 dic = {'name': '太白', 'age': 18}
-print(dic['name']) # 太白
+print(dic['name'])  # 太白
 
 # get
 dic = {'name': '太白', 'age': 18}
 v = dic.get('name')
-print(v) # '太白'
+print(v)  # '太白'
 v = dic.get('name1')
-print(v) # None
-v = dic.get('name2','没有此键')
-print(v) # 没有此键
-
+print(v)  # None
+v = dic.get('name2', '没有此键')
+print(v)  # 没有此键
 
 # keys()
 dic = {'name': '太白', 'age': 18}
@@ -119,11 +117,11 @@ dic = {'name': '太白', 'age': 18}
 print(dic.items())  # dict_items([('name', '太白'), ('age', 18)])
 
 '''  fromkeys'''
-ic = dict.fromkeys('abcd','太白')
-print(dic) # {'a': '太白', 'b': '太白', 'c': '太白', 'd': '太白'}
+ic = dict.fromkeys('abcd', '太白')
+print(dic)  # {'a': '太白', 'b': '太白', 'c': '太白', 'd': '太白'}
 
-dic = dict.fromkeys([1, 2, 3],'太白')
-print(dic) # {1: '太白', 2: '太白', 3: '太白'}
+dic = dict.fromkeys([1, 2, 3], '太白')
+print(dic)  # {1: '太白', 2: '太白', 3: '太白'}
 
 '''   '''
 key_list = dic.keys()
@@ -138,26 +136,23 @@ print(list(key_list))
 
 # 它还可以循环打印
 
-dic = {'剑圣':'易','哈啥给':'剑豪','大宝剑':'盖伦'}
+dic = {'剑圣': '易', '哈啥给': '剑豪', '大宝剑': '盖伦'}
 
 for i in dic:
     print(i)
-
-
 
 value_list = dic.values()
 print(value_list)
 '''
 结果:
 dict_values(['易', '剑豪', '盖伦'])'''
-#一个高仿列表,存放都是字典中的value
+# 一个高仿列表,存放都是字典中的value
 # 并且这个高仿的列表可以转化成列表
 print(list(value_list))
 
 # 它还可以循环打印
 for i in dic.values():
     print(i)
-
 
 key_value_list = dic.items()
 print(key_value_list)
@@ -168,10 +163,10 @@ dict_items([('剑圣', '易'), ('哈啥给', '剑豪'), ('大宝剑', '盖伦')]
 # 一个高仿列表,存放是多个元祖,元祖中第一个是字典中的键,第二个是字典中的值　　
 
 # 并且这个高仿的列表可以转化成列表
-print(list(key_value_list ))
+print(list(key_value_list))
 
 # 它还可以循环打印
-dic = {'剑圣':'易','哈啥给':'剑豪','大宝剑':'盖伦'}
+dic = {'剑圣': '易', '哈啥给': '剑豪', '大宝剑': '盖伦'}
 for i in dic.items():
     print(i)
 ''''结果：
@@ -181,20 +176,19 @@ for i in dic.items():
 
 ''' 拆包 '''
 
-a,b = 1,2
-print(a,b)
+a, b = 1, 2
+print(a, b)
 
+a, b = ('你好', '世界')  # 这个用专业名词就叫做元组的拆包
+print(a, b)
 
-a,b = ('你好','世界')  # 这个用专业名词就叫做元组的拆包
-print(a,b)
+a, b = ['你好', '大飞哥']
+print(a, b)
 
-a,b = ['你好','大飞哥']
-print(a,b)
-
-a,b = {'汪峰':'北京北京','王菲':'天后'}
-print(a,b)
+a, b = {'汪峰': '北京北京', '王菲': '天后'}
+print(a, b)
 
 ''' 键值对'''
-for k,v in dic.items():
-    print('这是键',k)
-    print('这是值',v)
+for k, v in dic.items():
+    print('这是键', k)
+    print('这是值', v)

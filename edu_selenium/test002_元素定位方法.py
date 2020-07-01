@@ -1,5 +1,5 @@
 # 元素定位的方法
-
+from selenium.webdriver.common.by import By
 from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
@@ -26,6 +26,12 @@ driver.find_element_by_xpath("//*[contains(text(),'新闻')]").click()
 driver.find_element_by_xpath('//*[text()="新闻"]').click()
 '''当标签里面含有其他标签+文字(内标签外)时   https://www.cnblogs.com/sschen/p/3612503.html'''
 driver.find_element_by_xpath("//*[contains(.,'新闻')]").click()
+
+'''  By'''
+driver.find_element((By.ID, 'kw'))
+driver.find_element((By.XPATH, '//*[@id="kw"]'))
+driver.find_elements((By.ID, 'kw'))
+driver.find_elements((By.XPATH, '//*[@id="kw"]'))
 
 '''css  单一属性的定位'''
 driver.find_element_by_css_selector("input")
