@@ -186,8 +186,8 @@ class BasePage(object):
             text = ele.text
             log.info('{} 元素 {} 的文本内容为 {}'.format(img_name, loc, text))
             return text
-        except:
-            log.exception('获取元素 {} 的文本内容失败,报错信息如下:'.format(loc))
+        except Exception as e:
+            log.info('获取元素 {} 的文本内容失败,报错信息如下:{}'.format(loc, e))
             # 截图
             self.save_img(img_name)
 
@@ -201,8 +201,8 @@ class BasePage(object):
             ele_attribute = ele.get_attribute(attr)
             log.info('{} 元素 {} 的文本内容为 {}'.format(img_name, loc, ele_attribute))
             return ele_attribute
-        except:
-            log.exception('获取元素 {} 的属性值失败,报错信息如下:'.format(loc))
+        except Exception as e:
+            log.info('获取元素 {} 的文本内容失败,报错信息如下:{}'.format(loc, e))
             self.save_img(img_name)
 
     # iframe 切换
@@ -215,8 +215,8 @@ class BasePage(object):
                 EC.frame_to_be_available_and_switch_to_it(frame_refer))
             time.sleep(0.5)
             log.info('切换成功')
-        except:
-            log.exception('iframe 切换失败!!!')
+        except Exception as e:
+            log.info('报错信息如下:{}'.format(e))
             # 截图
             self.save_img(img_name)
 
@@ -259,7 +259,7 @@ class BasePage(object):
                     window_handles = self.driver.window_handles
                     self.driver.swich_to.window(window_handles[-1])
                 else:
-                    log.exception('切换失败,没有要切换窗口的信息!!!')
+                    log.info('切换失败,没有要切换窗口的信息!!!')
                     self.save_img(img_name)
             elif name == 'default':
                 log.info('切换到默认页面')

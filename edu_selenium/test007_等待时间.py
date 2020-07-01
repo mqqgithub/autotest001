@@ -2,13 +2,17 @@
 
 # 导入 WebDriverWait 包
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import time
 from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
 '''显示等待WebDriverWait()方法使用'''
-element = WebDriverWait(driver, 10).until(lambda dr: driver.find_element_by_id("kw").is_displayed())
+# element = WebDriverWait(driver, 10).until(lambda dr: driver.find_element_by_id("kw"))
+# element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'kw')))
+element = WebDriverWait(driver, 10).until(EC.visibility_of(driver.find_element_by_id("kw")))
 element.send_keys("selenium")
 
 '''添加智能等待,隐式等待，遇到js问题可能就会一直等待'''
@@ -46,7 +50,9 @@ selenium的隐式等待
 原理：隐式等待，就是在创建driver时，为浏览器对象创建一个等待时间，这个方法是得不到某个元素就等待一段时间，直到拿到某个元素位置。
 注意：在使用隐式等待的时候，实际上浏览器会在你自己设定的时间内部断的刷新页面去寻找我们需要的元素
 driver.implicity_wait(10),全局的等待时间，针对页面所有的元素，只要没有找到，就等待这么长时间
-
+缺点：
+当页面某些js无法加载，但是想找的元素已经出来了，它还是会继续等待，直到页面加载完成（浏览器标签左上角圈圈不再转），
+才会执行下一句。某些情况下会影响脚本执行速度。
 
 
 

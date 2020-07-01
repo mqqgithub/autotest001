@@ -2,16 +2,20 @@
 from selenium import webdriver
 
 '''需要能找到驱动的位置，也可以在环境变量中'''
-# driver = webdriver.Chrome("D:\\TOOLS\jenkins\\browser_driver\\chromedriver.exe")
+driver = webdriver.Chrome(r"D:\Program Files\Python37\chromedriver.exe")
+# jenkins执行脚本的时候可能需要驱动和浏览器在同一个目录，不然会提示找不到浏览器，考虑加环境变量
 # driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
+
 '''get 网址 '''
 driver.get("https://www.baidu.com")
+
 '''最大、最小、具体大小'''
 driver.maximize_window()
 # driver.minimize_window()
 # driver.set_window_size(1000, 800)
 driver.get("https://www.w3cschool.cn/")
+
 '''浏览器向前、向后'''
 driver.back()
 driver.forward()
