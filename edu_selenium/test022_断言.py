@@ -96,7 +96,7 @@ if __name__ == '__main__':
     # 执行顺序是命名顺序：先执行test_case1，再执行test_case2
     # verbosity=1 0 2输出错误测试报告的详细程度
     # 方法1
-    #unittest.main(verbosity=2）
+    # unittest.main(verbosity=2）
     # 方法2
     '''
     suite = unittest.TestSuite()
@@ -139,4 +139,5 @@ if __name__ == '__main__':
     runner=unittest.TextTestRunner()
 #8.3.2.2使用run()方法运行测试套件（即运行测试套件中的所有用例）
     runner.run(discover)   
+    
 '''

@@ -11,6 +11,7 @@ switch_to_frame 方法可以把当前定位的主体切换了 frame 里。怎么
 from selenium import webdriver
 import time
 import os
+
 driver = webdriver.Firefox()
 file_path = 'file:///' + os.path.abspath('frame.html')
 driver.get(file_path)
@@ -18,8 +19,8 @@ driver.implicitly_wait(30)
 
 # 先找到到 ifrome1（id = f1）
 # driver.switch_to.frame(0)  使用索引
-# driver.switch_to.frame('id') 使用ID
-# driver.switch_to.frame('name') 使用name
+# driver.switch_to.frame('id') 直接使用ID
+# driver.switch_to.frame('name') 直接使用name
 # iframe = driver.find_element_by_id('id')
 # iframe = driver.find_element_by_xpath("//*[contains(@src, 'XXX')]")
 # driver.switch_to.frame("iframe") 先查询到iframe

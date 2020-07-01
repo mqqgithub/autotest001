@@ -4,7 +4,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
-'''id name tag_name class_name'''
+'''id /name /tag_name /class_name'''
 driver.find_element_by_id("kw").send_keys("python")
 driver.find_element_by_name("wd").send_keys("python")
 driver.find_element_by_tag_name("input").send_keys("python")

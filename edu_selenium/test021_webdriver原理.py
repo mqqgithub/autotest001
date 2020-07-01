@@ -16,7 +16,6 @@ session 是标记具体打开的那个浏览器
 
 import requests
 
-
 # 请求地址(打开浏览器)
 driver_url = 'http://localhost:9515/session'
 # 打开浏览器的请求参数
@@ -35,15 +34,15 @@ driver_value = {"capabilities":
 response_session = requests.post(driver_url, json=driver_value)
 print(response_session.json())
 # 访问我的博客的请求地址 （这个地址是我们上面记录的地址）
-url = 'http://localhost:9515/session/'+response_session.json()['sessionId']+'/url'
+url = 'http://localhost:9515/session/' + response_session.json()['sessionId'] + '/url'
 # 访问我的博客的请求参数
 value = {"url": "https://www.cnblogs.com/linuxchao/", "sessionId": response_session.json()['sessionId']}
 response_blog = requests.post(url=url, json=value)
 print(response_blog.json())
-
-
+######
 from selenium import webdriver
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
 diver = webdriver.Chrome()
 diver.get("http://www.baidu.com")
