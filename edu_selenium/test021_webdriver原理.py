@@ -1,5 +1,5 @@
 '''webdriver  原理：
-1. WebDriver 脚本启动浏览器驱动创建server端，连接server端，并启动浏览器。
+1. WebDriver 脚本启动浏览器驱动 创建server端，连接server端，并启动浏览器。
 2. Client 端通过 CommandExcuter 发送 HTTPRequest 给 remote server 的侦听端口（通信协议： the
 webriver wire protocol）
 3. Remote server 需要依赖原生的浏览器组件（如：IEDriverServer.exe、chromedriver.exe），来转
