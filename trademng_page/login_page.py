@@ -45,5 +45,5 @@ class LoginPage(BasePage):
 if __name__ == '__main__':
     p = LoginPage()
     p.login("maqingqing", "kjt@1233")
-    #p.login_to_system()
+    # p.login_to_system()
     p.quit()
