@@ -61,7 +61,7 @@ class TestLogin(unittest.TestCase):
         """登录测试：登录用户名正确，密码正确"""
         log.info("登录测试：登录用户名正确，密码正确")
 
-        self.p.login("maqingqing", "kjt@1212")
+        self.p.login("maqingqing", "kjt@2121")
 
 
 if __name__ == "__main__":
