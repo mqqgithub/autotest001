@@ -90,7 +90,7 @@ https://www.cnblogs.com/constantince/p/4565261.html  chrome浏览器开发这使
 '''
 '''
 第一种方法：通过绝对路径做定位（相信大家不会使用这种方式）
-By.xpath("/html/body/div/form/input")
+By.xpath(r"/html/body/div/form/input")
 第二种方法：相对路径
 By.xpath("//input")
 第三种方法：通过元素索引定位
