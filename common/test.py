@@ -1,16 +1,8 @@
-def wrapper(func):
-    def inner(*args, **kwargs):
-        print(f'执行被装饰函数之前的操作')
-        ret = func(*args, **kwargs)
-        print(f'执行被装饰函数之后的操作')
-        return ret
-    return inner
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
-def test(a):
-    print(f'test{a}')
-    return 'b'
-
-t = wrapper(test)
-print(t('1'))
-
+driver = webdriver.Chrome()
+driver.get('http://www.baidu.com')
+ele = WebDriverWait(driver).until(EC.visibility_of_element_located())

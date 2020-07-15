@@ -37,3 +37,13 @@ driver.save_screenshot(r"D:\test.jpg")  # 同上2个一样的
 driver.quit()
 # driver.close()
 # close()用于关闭当前窗口，quit()用于退出驱动程序并关闭所有相关窗口。
+
+
+'''
+用Chrome地址栏输入chrome://version/，查看自己的“个人资料路径”，然后在浏览器启动时，调用这个配置文件，代码如下：
+　　#coding=utf-8
+　　from selenium import webdriver
+　　option = webdriver.ChromeOptions()
+　　option.add_argument(r'--user-data-dir=C:\Users\Administrator\AppData\Local\Google\Chrome\User Data') #设置成用户自己的数据目录
+　　driver = webdriver.Chrome(chrome_options=option)
+'''

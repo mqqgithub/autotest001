@@ -26,6 +26,9 @@ driver.find_element_by_xpath("//*[contains(text(),'新闻')]").click()
 driver.find_element_by_xpath('//*[text()="新闻"]').click()
 '''当标签里面含有其他标签+文字(内标签外)时   https://www.cnblogs.com/sschen/p/3612503.html'''
 driver.find_element_by_xpath("//*[contains(.,'新闻')]").click()
+'''使用 match 正则匹配'''
+driver.find_element_by_xpath("//*[match(text(), 'hao123']").click()
+
 
 '''  By  '''
 driver.find_element((By.ID, 'kw'))
