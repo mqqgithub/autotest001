@@ -7,6 +7,7 @@ driver = webdriver.Chrome(r"D:\Program Files\Python37\chromedriver.exe")
 # driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
 # driver = webdriver.Chrome()
 
+
 '''get 网址 '''
 driver.get("https://www.baidu.com")
 
@@ -26,6 +27,11 @@ driver.refresh()
 '''浏览器的名字'''
 n = driver.name
 print(n)
+
+'''截图'''
+driver.get_screenshot_as_base64()  # html文件界面会用到
+driver.get_screenshot_as_file(r"D:\test.jpg")
+driver.save_screenshot(r"D:\test.jpg")  # 同上2个一样的
 
 '''退出'''
 driver.quit()
