@@ -8,5 +8,5 @@ driver.get('http://www.baidu.com')
 driver.find_element_by_id("kw").send_keys("aa")
 el = WebDriverWait(driver, 10, 0.5).until(EC.visibility_of_element_located((By.ID, "su")))
 el.click()
-
-
+print(el)
+driver.quit()
