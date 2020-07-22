@@ -4,7 +4,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
-'''id /name /tag_name /class_name'''
+''' id /name /tag_name /class_name '''
 driver.find_element_by_id("kw").send_keys("python")
 driver.find_element_by_name("wd").send_keys("python")
 driver.find_element_by_tag_name("input").send_keys("python")
@@ -16,7 +16,7 @@ driver.find_element_by_partial_link_text("新闻").click()
 
 '''xpath'''
 driver.find_element_by_xpath("//input[@id='kw']").send_keys("python")
-driver.find_element_by_xpath("//*[@id='kw]").send_keys("python")
+driver.find_element_by_xpath("//*[@id='kw']").send_keys("python")
 driver.find_element_by_xpath("//div[@id='u1']/a[0]").send_keys("1")
 driver.find_element_by_xpath("//div[@id='hd' or @name='q']").send_keys("2")
 driver.find_element_by_xpath("//input[contains(@id,'kw')]").send_keys("python")
@@ -89,6 +89,7 @@ driver.find_element_by_id("su").submit()
 # submit()要求提交对象是一个form表单，更强调对信息的提交。click()更强调事件的独立性。（比如，一个文字链接就不能用 submit()方法。）
 
 '''
+
 https://www.cnblogs.com/constantince/p/4565261.html  chrome浏览器开发这使用指南
 '''
 '''
@@ -102,8 +103,8 @@ By.xpath("//input[4]")
 By.xpath("//input[@id='kw1']")
 By.xpath("//input[@type='name' and @name='kw1']")
 第五种方法：使用部分属性值匹配（最强大的方法）
-By.xpath("//input[starts-with(@id,'nice')
-By.xpath("//input[ends-with(@id,'很漂亮')
+By.xpath("//input[starts-with(@id,'nice')")
+#  By.xpath("//input[ends-with(@id,'很漂亮')")  貌似没有
 By.xpath("//input[contains(@id,'那么美')]")
 前一个兄弟节点
 //input[@name="sne.sysLnNumAdmin.category2"]/preceding-sibling::input
@@ -114,4 +115,5 @@ dr.find_element_by_xpath("//*[contains(text(),'hao123')]/following-sibling::a").
 父节点定位, 通过子节点，查找父节点
 //span[text()="山东省"]/parent::a/preceding-sibling::span
 dr.find_element_by_xpath("//*[contains(text(),'hao123')]/parent::div").get_attribute("id")
+
 '''
