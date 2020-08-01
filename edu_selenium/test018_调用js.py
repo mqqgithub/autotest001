@@ -74,6 +74,16 @@ js="document.getElementById('promote_start_date').removeAttribute('readonly')"
 '''
 js = "document.getElementsByTagName('button').click()"
 '''
+# 滚动到底部
+js = "window.scrollTo(0, document.body.scrollHeight)"
+# 滚到底部
+js1 = "window.scrollTo(0, 0)"
+# 播放视频
+ele = driver.find_element_by_id('video')
+driver.execute_script("argument[0].play()", ele)
+
+
+
 
 
 

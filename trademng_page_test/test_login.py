@@ -1,5 +1,5 @@
 import time
-from selenium import webdriver
+# from selenium import webdriver
 import unittest
 from BeautifulReport import BeautifulReport
 
@@ -29,7 +29,7 @@ class TestLogin(unittest.TestCase):
         print('登录测试：登录成功,详情中展示')
         print("test start")
 
-        self.p.login("maqingqing", "kjt@1212")
+        self.p.login("maqingqing", "kjt@2121")
         self.assertEqual(self.p.shouEnv(), u"马庆庆", "登录失败")
 
         print("test ending")
@@ -61,7 +61,7 @@ class TestLogin(unittest.TestCase):
         """登录测试：登录用户名正确，密码正确"""
         log.info("登录测试：登录用户名正确，密码正确")
 
-        self.p.login("maqingqing", "kjt@1212")
+        self.p.login("maqingqing", "kjt@2121")
 
 
 if __name__ == "__main__":

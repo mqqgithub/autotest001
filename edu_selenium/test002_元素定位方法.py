@@ -4,7 +4,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://www.baidu.com")
 
-'''id /name /tag_name /class_name'''
+''' id /name /tag_name /class_name '''
 driver.find_element_by_id("kw").send_keys("python")
 driver.find_element_by_name("wd").send_keys("python")
 driver.find_element_by_tag_name("input").send_keys("python")
@@ -16,7 +16,7 @@ driver.find_element_by_partial_link_text("新闻").click()
 
 '''xpath'''
 driver.find_element_by_xpath("//input[@id='kw']").send_keys("python")
-driver.find_element_by_xpath("//*[@id='kw]").send_keys("python")
+driver.find_element_by_xpath("//*[@id='kw']").send_keys("python")
 driver.find_element_by_xpath("//div[@id='u1']/a[0]").send_keys("1")
 driver.find_element_by_xpath("//div[@id='hd' or @name='q']").send_keys("2")
 driver.find_element_by_xpath("//input[contains(@id,'kw')]").send_keys("python")
@@ -26,8 +26,11 @@ driver.find_element_by_xpath("//*[contains(text(),'新闻')]").click()
 driver.find_element_by_xpath('//*[text()="新闻"]').click()
 '''当标签里面含有其他标签+文字(内标签外)时   https://www.cnblogs.com/sschen/p/3612503.html'''
 driver.find_element_by_xpath("//*[contains(.,'新闻')]").click()
+'''使用 match 正则匹配'''
+driver.find_element_by_xpath("//*[match(text(), 'hao123']").click()
 
-'''  By'''
+
+'''  By  '''
 driver.find_element((By.ID, 'kw'))
 driver.find_element((By.XPATH, '//*[@id="kw"]'))
 driver.find_elements((By.ID, 'kw'))
@@ -86,11 +89,12 @@ driver.find_element_by_id("su").submit()
 # submit()要求提交对象是一个form表单，更强调对信息的提交。click()更强调事件的独立性。（比如，一个文字链接就不能用 submit()方法。）
 
 '''
+
 https://www.cnblogs.com/constantince/p/4565261.html  chrome浏览器开发这使用指南
 '''
 '''
 第一种方法：通过绝对路径做定位（相信大家不会使用这种方式）
-By.xpath("/html/body/div/form/input")
+By.xpath(r"/html/body/div/form/input")
 第二种方法：相对路径
 By.xpath("//input")
 第三种方法：通过元素索引定位
@@ -99,8 +103,8 @@ By.xpath("//input[4]")
 By.xpath("//input[@id='kw1']")
 By.xpath("//input[@type='name' and @name='kw1']")
 第五种方法：使用部分属性值匹配（最强大的方法）
-By.xpath("//input[starts-with(@id,'nice')
-By.xpath("//input[ends-with(@id,'很漂亮')
+By.xpath("//input[starts-with(@id,'nice')")
+#  By.xpath("//input[ends-with(@id,'很漂亮')")  貌似没有
 By.xpath("//input[contains(@id,'那么美')]")
 前一个兄弟节点
 //input[@name="sne.sysLnNumAdmin.category2"]/preceding-sibling::input
@@ -111,4 +115,5 @@ dr.find_element_by_xpath("//*[contains(text(),'hao123')]/following-sibling::a").
 父节点定位, 通过子节点，查找父节点
 //span[text()="山东省"]/parent::a/preceding-sibling::span
 dr.find_element_by_xpath("//*[contains(text(),'hao123')]/parent::div").get_attribute("id")
+
 '''

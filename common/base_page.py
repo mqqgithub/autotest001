@@ -52,9 +52,10 @@ class BasePage(object):
         log.info('{}等待元素可见{}'.format(img_name, loc))
         try:
             start = time.time()
-            WebDriverWait(self.driver, timeout, poll_frequency).until(EC.visibility_of_element_located(loc))
+            ele = WebDriverWait(self.driver, timeout, poll_frequency).until(EC.visibility_of_element_located(loc))
             end = time.time()
             log.info('等待%.2f秒后元素可见' % (end - start))
+            return ele
         except Exception as e:
             log.info('{}等待元素可见失败{}'.format(img_name, loc))
             print(e)

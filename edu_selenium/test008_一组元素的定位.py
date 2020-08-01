@@ -1,6 +1,7 @@
 # 定位一组元素   find_elements_by_xx
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import os
 driver = webdriver.Firefox()
 file_path = 'file:///' + os.path.abspath('checkbox.html')
@@ -21,9 +22,9 @@ driver.quit()
     是查找多个元素并且返回一个列表
     如果定位不到元素不会报错，返回一个空列表
 '''
-driver.find_elements("id", "su")
-driver.find_elements("name", "")
-driver.find_elements("tag name", "")
+driver.find_elements(By.ID, "su")
+driver.find_elements(By.NAME, "")
+driver.find_elements(By.TAG_NAME, "")
 driver.find_elements("link text", "")
 driver.find_elements("partial link text", "")
 driver.find_elements("class name", "")

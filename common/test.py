@@ -1,16 +1,6 @@
-def wrapper(func):
-    def inner(*args, **kwargs):
-        print(f'执行被装饰函数之前的操作')
-        ret = func(*args, **kwargs)
-        print(f'执行被装饰函数之后的操作')
-        return ret
-    return inner
+import random
 
-
-def test(a):
-    print(f'test{a}')
-    return 'b'
-
-t = wrapper(test)
-print(t('1'))
-
+a = 'mqq_'+''.join(random.sample('123456abc', 5))+'@163.com'
+print(a)
+b = random.randint(1,100000)
+print(b)
