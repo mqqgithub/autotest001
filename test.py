@@ -14,5 +14,3 @@ class A():
 a = A()
 b = A()
 print(id(a), id(b))
-
-print(56+16+18+70-60+12)
