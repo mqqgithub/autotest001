@@ -32,7 +32,7 @@ class BasePage(object):
             os.makedirs(screenshot_path)
 
         tm = time.strftime('%H%M%S', time.localtime(time.time()))
-        file_path = screenshot_path + '\\%s_%s.png' % (img_name, tm)
+        file_path = screenshot_path + r'\%s_%s.png' % (img_name, tm)
 
         try:
             self.driver.save_screenshot(file_path)
