@@ -40,6 +40,7 @@ value = {"url": "https://www.cnblogs.com/linuxchao/", "sessionId": response_sess
 response_blog = requests.post(url=url, json=value)
 print(response_blog.json())
 ######
+'''
 from selenium import webdriver
 import logging
 
@@ -49,3 +50,4 @@ diver.get("http://www.baidu.com")
 diver.find_element_by_id("kw").send_keys("selenium")
 diver.find_element_by_id("su").click()
 diver.quit()
+'''

@@ -29,9 +29,9 @@ n = driver.name
 print(n)
 
 '''截图'''
-driver.get_screenshot_as_base64()  # html文件界面会用到
-driver.get_screenshot_as_file(r"D:\test.jpg")
-driver.save_screenshot(r"D:\test.jpg")  # 同上2个一样的
+# driver.get_screenshot_as_base64()  # html文件界面会用到
+# driver.get_screenshot_as_file(r"D:\test.jpg")
+# driver.save_screenshot(r"D:\test.jpg")  # 同上2个一样的
 
 '''退出'''
 driver.quit()
@@ -44,6 +44,6 @@ driver.quit()
 　　#coding=utf-8
 　　from selenium import webdriver
 　　option = webdriver.ChromeOptions()
-　　option.add_argument(r'--user-data-dir=C:\Users\Administrator\AppData\Local\Google\Chrome\User Data') #设置成用户自己的数据目录
+　　# option.add_argument(r'--user-data-dir=C:\   Users\Administrator\AppData\Local\Google\Chrome\  User Data') #设置成用户自己的数据目录
 　　driver = webdriver.Chrome(chrome_options=option)
 '''

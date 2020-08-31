@@ -11,7 +11,7 @@ driver.get("https://www.baidu.com")
 
 '''显示等待WebDriverWait()方法使用'''
 # element = WebDriverWait(driver, 10).until(lambda dr: driver.find_element_by_id("kw"))
-# element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'kw')))
+element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'kw')))
 element = WebDriverWait(driver, 10).until(EC.visibility_of(driver.find_element_by_id("kw")))
 element.send_keys("selenium")
 
