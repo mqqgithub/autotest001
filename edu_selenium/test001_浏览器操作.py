@@ -6,6 +6,8 @@ driver = webdriver.Chrome(r"D:\Program Files\Python37\chromedriver.exe")
 # jenkins执行脚本的时候可能需要驱动和浏览器在同一个目录，不然会提示找不到浏览器，考虑加环境变量
 # driver = webdriver.Chrome("C:\\Users\\maqingqing\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe")
 # driver = webdriver.Chrome()
+# driver = webdriver.Ie()
+# driver = webdriver.Firefox()
 
 
 '''get 网址 '''

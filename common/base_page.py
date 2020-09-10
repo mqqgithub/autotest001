@@ -12,9 +12,7 @@ from selenium.webdriver.support.select import Select
 from test_utils import config
 from test_utils.log import Log
 
-
 log = Log()
-
 
 # 创建基础类
 class BasePage(object):
