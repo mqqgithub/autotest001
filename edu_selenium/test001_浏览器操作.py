@@ -46,6 +46,15 @@ driver.quit()
 　　#coding=utf-8
 　　from selenium import webdriver
 　　option = webdriver.ChromeOptions()
+    # 默认使用个人浏览器设置
 　　# option.add_argument(r'--user-data-dir=C:\   Users\Administrator\AppData\Local\Google\Chrome\  User Data') #设置成用户自己的数据目录
-　　driver = webdriver.Chrome(chrome_options=option)
+　　# 设置默认大小
+    # option.add-argument(r'--window-size=1366,768')
+    # 无界面运行
+    # option.add-argument(r'--headless')
+    # 最大化运行
+    # option.add-argument('--start-maximized')
+    # 禁用自动化测试
+    # option.add-argument('--disable-infobars')
+driver = webdriver.Chrome(chrome_options=option)
 '''

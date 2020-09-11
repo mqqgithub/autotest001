@@ -1,4 +1,7 @@
-gen = (i for i in range(1, 100))
-print(next(gen))
-print(next(gen))
-print(next(gen))
+from selenium import webdriver
+
+option = webdriver.ChromeOptions
+option.add_argument("--window-size=1296,738")
+
+
+
